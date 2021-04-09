@@ -8,7 +8,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 //import FeaturedPost from './FeaturedPost';
-import Main from './Main';
+import HomeBody from './HomeBody';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 //import post1 from './blog-post.1.md';
@@ -90,7 +90,7 @@ const sidebar = {
   ],
 };
 
-export default function Blog() {
+export default function Home() {
   const classes = useStyles();
 
   return (
@@ -102,7 +102,7 @@ export default function Blog() {
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4} className={classes.mainGrid}>
             <Grid item xs={8}>
-              <Main title="Novedades" posts={featuredPosts} />
+              <HomeBody title="Novedades" posts={featuredPosts} />
             </Grid>
             <Grid item xs={4}>
               <Sidebar

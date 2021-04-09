@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import FeaturedPost from './FeaturedPost';
 
 
-export default function Main(props) {
+export default function HomeBody(props) {
   //const classes = useStyles();
   const { posts, title } = props;
 
@@ -30,7 +30,7 @@ export default function Main(props) {
   );
 }
 
-Main.propTypes = {
+HomeBody.propTypes = {
   posts: PropTypes.array,
   title: PropTypes.string,
 };
