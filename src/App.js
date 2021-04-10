@@ -1,16 +1,29 @@
 import Home from './components/Home'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import CaseStudy from './components/CaseStudy'
+import Simulation from './components/Simulation'
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from './components/Header'
+import Footer from './components/Footer';
+import { Route, Switch } from "wouter";
+import Container from '@material-ui/core/Container';
 function App() {
-  
+
   return (
-    <Router>
+    <>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Header />
+      </Container>
       <Switch>
-        <Route path="/">
-          <Home/>
-        </Route>
+        <Route component={Home} path="/" />
+        <Route component={Simulation} path="/simulation" />
+        <Route component={CaseStudy} path="/casestudy/:id" />
+
       </Switch>
-    </Router>  
+      <Footer title="IS2 - Primer Semestre 2021" description="" />
+    </>
+
   );
 }
 

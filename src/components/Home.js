@@ -1,19 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
-//import FeaturedPost from './FeaturedPost';
 import HomeBody from './HomeBody';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
-//import post1 from './blog-post.1.md';
-//import post2 from './blog-post.2.md';
-//import post3 from './blog-post.3.md';
+import Container from '@material-ui/core/Container';
+
+
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -21,14 +16,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const sections = [
-  { title: 'Casos de estudio', url: '#' },
-  { title: 'Juegos', url: '#' },
-  { title: 'Metricas', url: '#' },
-  { title: 'Punto 3', url: '#' },
-  { title: 'Punto 4', url: '#' },
-  { title: 'Punto 5', url: '#' },
-];
 
 const mainFeaturedPost = {
   title: 'IS2 Prototipo',
@@ -95,27 +82,24 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="" sections={sections} />
-        <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4} className={classes.mainGrid}>
-            <Grid item xs={8}>
-              <HomeBody title="Novedades" posts={featuredPosts} />
-            </Grid>
-            <Grid item xs={4}>
-              <Sidebar
-                title={sidebar.title}
-                description={sidebar.description}
-                archives={sidebar.archives}
-                social={sidebar.social}
-              />
-            </Grid>
+      <main>
+        <MainFeaturedPost post={mainFeaturedPost} />
+        <Grid container spacing={4} className={classes.mainGrid}>
+          <Grid item xs={8}>
+            <HomeBody title="Novedades" posts={featuredPosts} />
           </Grid>
-        </main>
+          <Grid item xs={4}>
+            <Sidebar
+              title={sidebar.title}
+              description={sidebar.description}
+              archives={sidebar.archives}
+              social={sidebar.social}
+            />
+          </Grid>
+        </Grid>
+      </main>
       </Container>
-      <Footer title="IS2 - Primer Semestre 2021" description="" />
     </React.Fragment>
   );
 }
