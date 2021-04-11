@@ -7,6 +7,7 @@ import MainFeaturedPost from './MainFeaturedPost';
 import HomeBody from './HomeBody';
 import Sidebar from './Sidebar';
 import Container from '@material-ui/core/Container';
+import { Box } from '@material-ui/core';
 
 
 
@@ -82,6 +83,7 @@ export default function Home() {
 
   return (
     <React.Fragment>
+      <Box m={2} />
       <Container maxWidth="lg">
       <main>
         <MainFeaturedPost post={mainFeaturedPost} />

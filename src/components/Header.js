@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import {Link} from 'wouter'
+import { AppBar } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -88,74 +89,93 @@ export default function Header(props) {
         </Button>
       </Toolbar>
 
-      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-        <Typography
-          onClick={handleMenuCase}
-          color="inherit"
-          noWrap
-          variant="body2"
-          className={classes.toolbarLink}
-        >
-          Casos de estudio
-        </Typography>
-        <Menu
-          anchorEl={anchorCase}
-          open={Boolean(anchorCase)}
-          onClose = {handleCloseMenuCase}
-        >
-            <MenuItem onClick = {handleCloseMenuCase}>
-              <Link to={"/casestudy/fvl"}>
-                FLV
-              </Link>
-            </MenuItem> 
-            <MenuItem onClick = {handleCloseMenuCase}>
-              <Link to={"/casestudy/cisco"}>
-                Cisco
-              </Link>
-            </MenuItem> 
-        </Menu>
+      <AppBar position="static" style={{ background: '#2E3B55' }}>
+        <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+          <Link to={"/"} >
+            <Button 
+              onClick={handleMenuCase}
+              color="inherit"
+              noWrap
+              variant="body2"
+              style={{textTransform: 'none'}}
+              className={classes.toolbarLink}
+              >
+                  Principal
+            </Button>
+          </Link>
 
-        <Typography
-          onClick={handleMenuCase}
-          color="inherit"
-          noWrap
-          variant="body2"
-          className={classes.toolbarLink}
-        >
-          Simulacion
-        </Typography>
+          <Button 
+            onClick={handleMenuCase}
+            color="inherit"
+            noWrap
+            variant="body2"
+            style={{textTransform: 'none'}}
+            className={classes.toolbarLink}
+            >
+                Casos de estudio
+          </Button>
 
-        <Typography
-          onClick={handleMenuCase}
-          color="inherit"
-          noWrap
-          variant="body2"
-          className={classes.toolbarLink}
-        >
-          Punto 5
-        </Typography>
 
-        <Typography
-          onClick={handleMenuCase}
-          color="inherit"
-          noWrap
-          variant="body2"
-          className={classes.toolbarLink}
-        >
-          Punto 6
-        </Typography>
+          <Menu
+            anchorEl={anchorCase}
+            open={Boolean(anchorCase)}
+            onClose = {handleCloseMenuCase}
+          >
+              <MenuItem onClick = {handleCloseMenuCase}>
+                <Link to={"/casestudy/fvl"}>
+                  Fundación Valle de Lili
+                </Link>
+              </MenuItem> 
+              <MenuItem onClick = {handleCloseMenuCase}>
+                
+              </MenuItem> 
+          </Menu>
 
-        <Typography
-          onClick={handleMenuCase}
-          color="inherit"
-          noWrap
-          variant="body2"
-          className={classes.toolbarLink}
-        >
-          Casos de estudio
-        </Typography>
-        
-      </Toolbar>
+
+          <Link to={"/simulation"} >
+            <Button 
+              size="small"
+              color="inherit"
+              noWrap
+              variant="body2"
+              style={{textTransform: 'none'}}
+            >
+                Simulación
+            </Button>
+          </Link>
+          
+          <Button 
+            color="inherit"
+            noWrap
+            variant="body2"
+            style={{textTransform: 'none'}}
+            className={classes.toolbarLink}
+            >
+                Punto 6
+          </Button>
+
+          <Button 
+            color="inherit"
+            noWrap
+            variant="body2"
+            style={{textTransform: 'none'}}
+            className={classes.toolbarLink}
+            >
+                Punto 7
+          </Button>
+
+          <Button 
+            color="inherit"
+            noWrap
+            variant="body2"
+            style={{textTransform: 'none'}}
+            className={classes.toolbarLink}
+            >
+                Punto 8
+          </Button>
+          
+        </Toolbar>
+      </AppBar>
     </React.Fragment>
   );
 }
