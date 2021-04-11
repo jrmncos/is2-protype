@@ -55,7 +55,7 @@ export default function CaseStudy({params}) {
   return(
     <Container maxWidth="lg">
     <main>
-      <Grid container spacing={4} className={classes.mainGrid}>
+      <Grid container spacing={4} className={classes.mainGrid} m={4}>
         <Grid item xs={8}>
           {
             renderSwitch(caseStudy)
