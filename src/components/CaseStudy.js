@@ -8,6 +8,7 @@ import Sidebar from './Sidebar';
 import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import Diamond from "../synthesis/Diamond";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -47,6 +48,8 @@ export default function CaseStudy({params}) {
         return <FVL/>
       case "cisco":
         return <Cisco/>
+      case "diamond":
+        return <Diamond/>
       default:
         return <Home/>
     }

@@ -127,8 +127,15 @@ export default function Header(props) {
                 </Link>
               </MenuItem> 
               <MenuItem onClick = {handleCloseMenuCase}>
-                
-              </MenuItem> 
+                <Link to={"/casestudy/diamond"}>
+                  Hay diamantes en la mina de datos
+                </Link>
+              </MenuItem>
+              <MenuItem onClick = {handleCloseMenuCase}>
+                <Link to={"/casestudy/cisco"}>
+                  Cisco
+                </Link>
+              </MenuItem>  
           </Menu>
 
 
