@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import Cisco from "../synthesis/Cisco";
-import FLV from "../synthesis/FVL";
-import Home from "./Home";
 import SimulationChoice from "./SimulationChoice";
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Simulator from "./Simulator";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -20,12 +18,14 @@ export default function Simulation() {
   const renderSwitch = () => {
     console.log("Switch!")
     switch(levelSelected){
-      case "easy":
-        return <FLV/>
-      case "medium":
-        return <Cisco/>
+      case "beginner":
+        return <Simulator/>
+      case "intermediate":
+        return <Simulator/>
+      case "advanced":
+        return <Simulator/>
       default:
-        return <Home/>
+        return <Simulator/>
     }
   }
 

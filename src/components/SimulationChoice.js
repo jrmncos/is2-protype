@@ -19,8 +19,12 @@ const useStyles = makeStyles({
 
 });
 
-export default function SimulationChoice({ levelSelected }) {
+export default function SimulationChoice({ setLevelSelected }) {
   const classes = useStyles();
+
+  const handleClick = (level) => {
+    setLevelSelected(level)
+  }
 
   return (
     <>
@@ -64,18 +68,33 @@ export default function SimulationChoice({ levelSelected }) {
             alignItems="center"
           >
             <Grid item xs={8}>
-              <Button size="large" style={{ borderRadius: 35, backgroundColor: "#21b6ae", textTransform: 'none'}} variant="contained" >
-                Beginner
+              <Button 
+                size="large"
+                style={{ borderRadius: 35, backgroundColor: "#21b6ae", textTransform: 'none'}}
+                variant="contained"
+                onClick={()=>handleClick('beginner')} 
+              >
+                Principiante
               </Button>
             </Grid>
             <Grid item xs={8}>
-              <Button size="large"style={{ borderRadius: 35, backgroundColor: "#21b6ae", textTransform: 'none'}} variant="contained" >
-                Intermediate
+              <Button 
+                size="large"
+                style={{ borderRadius: 35, backgroundColor: "#21b6ae", textTransform: 'none'}}
+                variant="contained"
+                onClick={()=>handleClick('intermediate')} 
+              >
+                Principiante
               </Button>
             </Grid>
             <Grid item xs={8}>
-              <Button size="large" style={{ borderRadius: 35, backgroundColor: "#21b6ae", textTransform: 'none'}} variant="contained" >
-                Advanced
+              <Button 
+                size="large"
+                style={{ borderRadius: 35, backgroundColor: "#21b6ae", textTransform: 'none'}}
+                variant="contained"
+                onClick={()=>handleClick('advanced')} 
+              >
+                Principiante
               </Button>
             </Grid>
           </Grid>
