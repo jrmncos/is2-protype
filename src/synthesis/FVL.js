@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -42,6 +43,7 @@ export default function FLV() {
       Para llevar a cabo esta sistematización total de los procesos se optó por contratar a una consultora llamada Compunet que conocía de una manera profunda la solución de Planificación de Recursos Empresariales (ERP) que brindaba SAP, que busca automatizar procesos de la empresa, disponibilidad de la información, centralizar áreas de trabajo en un único sistema, entre otras cosas.
 
     </Typography>
+    <Box m={1}/>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -60,7 +62,7 @@ export default function FLV() {
       </CardActionArea>
 
     </Card>
-
+    <Box m={1}/>
     <Typography variant="body1" gutterBottom>
 
     La adquisición del sistema no fue sencilla, puesto a que SAP traía un conjunto de soluciones predefinidas y estas no se adecuaban al 100% a las necesidades del hospital, esto produjo una puja entre jefes de áreas del hospital y los desarrolladores de la consultora. En esta puja se llegaba a una conciliación entre ambas partes donde los médicos argumentaban que lo que SAP les brindaba no les iba a resultar útil, necesitaban soluciones más específicas. Y por otro lado, los desarrolladores remarcaban que no eran necesarias todas esas implementaciones puntuales, que era el hospital el que debía adaptarse a SAP y no viceversa debido a que consideraban que SAP seguía buenas prácticas.

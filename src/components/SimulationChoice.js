@@ -84,7 +84,7 @@ export default function SimulationChoice({ setLevelSelected }) {
                 variant="contained"
                 onClick={()=>handleClick('intermediate')} 
               >
-                Principiante
+                Intermedio
               </Button>
             </Grid>
             <Grid item xs={8}>
@@ -94,7 +94,7 @@ export default function SimulationChoice({ setLevelSelected }) {
                 variant="contained"
                 onClick={()=>handleClick('advanced')} 
               >
-                Principiante
+                Avanzado
               </Button>
             </Grid>
           </Grid>
