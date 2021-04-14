@@ -1,4 +1,4 @@
-import { CardHeader, Grid } from "@material-ui/core";
+import { CardHeader, Checkbox, FormControlLabel, Grid } from "@material-ui/core";
 import React from "react";
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -57,22 +57,32 @@ export default function Simulator() {
               })}
             </Grid>
             <CardActionArea>
-              <CardMedia
+              {/*<CardMedia
                 className={classes.media}
                 image="https://miro.medium.com/max/755/0*p0h6jj_m4UGMtSYA.png"
                 title="Edificación FVL"
-              />
+              />*/}
               <CardContent>
-
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Variable1
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Variable2
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  Variable2
-                </Typography>
+              <FormControlLabel
+                value="dailys"
+                control={<Checkbox color="primary" />}
+                label="Dailys"
+                labelPlacement="start"
+              />
+              <br/>
+              <FormControlLabel
+                value="dailys"
+                control={<Checkbox color="primary" />}
+                label="Coaching"
+                labelPlacement="start"
+              />
+              <br/>
+              <FormControlLabel
+                value="dailys"
+                control={<Checkbox color="primary" />}
+                label="Status review"
+                labelPlacement="start"
+              />
               </CardContent>
             </CardActionArea>
           </Card>
