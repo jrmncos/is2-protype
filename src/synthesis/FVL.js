@@ -35,7 +35,7 @@ export default function FLV() {
       Fundación Valle del Lili: Implementación de SAP
     </Typography>
 
-    <Typography variant="body1" gutterBottom>
+    <Typography variant="subtitle1" gutterBottom>
       El Hospital Fundación del Valle de Colombia en el año 2011 decidió sistematizar todos los procesos que involucran la atención a pacientes, entre ellas se incluyen principalmente historias clínicas, órdenes médicas, gestión de medicamentos e insumos, gestión de ingresos y costos en general, seguimiento de pago de médicos.
 
       Donde los principales problemas estaban relacionados a la gestión de la información en papel, sin profundizar, ciertos aspectos del manejo de esta información se veían comprometidos: disponibilidad, seguridad, consistencia y redundancia entre otras cuestiones.

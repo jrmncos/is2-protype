@@ -1,7 +1,7 @@
 import Home from './components/Home'
 import CaseStudy from './components/CaseStudy'
 import Simulation from './components/Simulation'
-
+import Tutorial from './components/Tutorial'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from './components/Header'
 import Footer from './components/Footer';
@@ -19,7 +19,8 @@ function App() {
         <Route component={Home} path="/" />
         <Route component={Simulation} path="/simulation" />
         <Route component={CaseStudy} path="/casestudy/:id" />
-
+        <Route component={Tutorial} path="/tutorial/:id" />
+        
       </Switch>
       <Footer title="IS2 - Primer Semestre 2021" description="" />
     </>

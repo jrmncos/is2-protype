@@ -58,13 +58,22 @@ export default function Header(props) {
   const classes = useStyles();
   const { title } = props;
   const [anchorCase, setAnchorCase] = useState(false)
+  const [anchorTutorial, setAnchorTutorial] = useState(false)
 
   const handleMenuCase = (event) => {
     setAnchorCase(event.currentTarget)
   }
 
+  const handleMenuTutorial = (event) => {
+    setAnchorTutorial(event.currentTarget)
+  }
+
   const handleCloseMenuCase = () => {
     setAnchorCase(null)
+  }
+
+  const handleCloseMenuTutorial = () => {
+    setAnchorTutorial(null)
   }
 
   return (
@@ -112,7 +121,7 @@ export default function Header(props) {
             style={{textTransform: 'none'}}
             className={classes.toolbarLink}
             >
-                Casos de estudio
+              Casos de estudio
           </Button>
 
 
@@ -121,21 +130,21 @@ export default function Header(props) {
             open={Boolean(anchorCase)}
             onClose = {handleCloseMenuCase}
           >
-              <MenuItem onClick = {handleCloseMenuCase}>
-                <Link to={"/casestudy/fvl"}>
-                  Fundación Valle de Lili
-                </Link>
-              </MenuItem> 
-              <MenuItem onClick = {handleCloseMenuCase}>
-                <Link to={"/casestudy/diamond"}>
-                  Hay diamantes en la mina de datos
-                </Link>
-              </MenuItem>
-              <MenuItem onClick = {handleCloseMenuCase}>
-                <Link to={"/casestudy/cisco"}>
-                  Cisco
-                </Link>
-              </MenuItem>  
+            <MenuItem onClick = {handleCloseMenuCase}>
+              <Link to={"/casestudy/fvl"}>
+                Fundación Valle de Lili
+              </Link>
+            </MenuItem> 
+            <MenuItem onClick = {handleCloseMenuCase}>
+              <Link to={"/casestudy/diamond"}>
+                Hay diamantes en la mina de datos
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuCase}>
+              <Link to={"/casestudy/cisco"}>
+                Cisco
+              </Link>
+            </MenuItem>  
           </Menu>
 
 
@@ -147,19 +156,32 @@ export default function Header(props) {
               variant="body2"
               style={{textTransform: 'none'}}
             >
-                Simulación
+              Simulación
             </Button>
           </Link>
           
           <Button 
+            onClick={handleMenuTutorial}
             color="inherit"
             noWrap
             variant="body2"
             style={{textTransform: 'none'}}
             className={classes.toolbarLink}
             >
-                Punto 6
+                Tutoriales
           </Button>
+
+          <Menu
+            anchorEl={anchorTutorial}
+            open={Boolean(anchorTutorial)}
+            onClose = {handleCloseMenuTutorial}
+          >
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/capitalism"}>
+                Capitalismo de plataformas
+              </Link>
+            </MenuItem> 
+          </Menu>
 
           <Button 
             color="inherit"
