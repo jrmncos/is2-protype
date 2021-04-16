@@ -332,7 +332,7 @@ export default function Simulator() {
             />
             <CardActionArea>
               <CardContent>
-                {loadSimulation && <Loader/>}
+                {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation}/>}
               </CardContent>
             </CardActionArea>
           </Card>
