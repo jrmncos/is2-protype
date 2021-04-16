@@ -58,6 +58,9 @@ const useStyles = makeStyles({
     width:'98%',
     textAlign: "center",
     marginLeft: "1%",
+  },
+  resultados:{
+    textAlign:"center",
   }
 });
 
@@ -330,8 +333,14 @@ export default function Simulator() {
                 </Typography>
               }
             />
-            <CardActionArea>
-              <CardContent>
+            <CardActionArea >
+              <CardContent className={classes.resultados}>
+                  <Typography variant="h4" component="h2">
+                    Duración
+                  </Typography>
+                  <Typography variant="h4" component="h2">
+                    26 semanas de 24 estimadas
+                  </Typography>
                 {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation}/>}
               </CardContent>
             </CardActionArea>
