@@ -144,7 +144,17 @@ export default function Header(props) {
               <Link to={"/casestudy/cisco"}>
                 Cisco
               </Link>
-            </MenuItem>  
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuCase}>
+              <Link to={"/casestudy/greathack"}>
+                Great Hack
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuCase}>
+              <Link to={"/casestudy/indiegames"}>
+                Indie Games
+              </Link>
+            </MenuItem>      
           </Menu>
 
 
@@ -179,6 +189,11 @@ export default function Header(props) {
             <MenuItem onClick = {handleCloseMenuTutorial}>
               <Link to={"/tutorial/capitalism"}>
                 Capitalismo de plataformas
+              </Link>
+            </MenuItem> 
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/genero"}>
+                Género en el contenido de la tecnología
               </Link>
             </MenuItem> 
           </Menu>

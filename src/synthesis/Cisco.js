@@ -2,76 +2,100 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: '100%',
   },
   media: {
-    height: 140,
+    height: 650,
+
   },
 });
 
-export default function Cisco() {
+export default function GreatHack(){
   const classes = useStyles();
 
-
-  return (
+  return(
     <>
-    <Typography variant="h1" component="h2" gutterBottom>
-      CISCO!
-    </Typography>
+      <Grid
+        container
+        direction="column"
+        justify="flex-start"
+        alignItems="stretch"
+        spacing={2}
+      >
+      <Typography variant="h3" component="h2" gutterBottom>
+        Cisco Systems: Implementación del Sistema ERP
+      </Typography>
 
-    <Typography variant="body1" gutterBottom>
-      El Hospital Fundación del Valle de Colombia en el año 2011 decidió sistematizar todos los procesos que involucran la atención a pacientes, entre ellas se incluyen principalmente historias clínicas, órdenes médicas, gestión de medicamentos e insumos, gestión de ingresos y costos en general, seguimiento de pago de médicos.
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        Este caso de estudio, cuenta como CISCO systems llevó a cabo la implementación de un Enterprise Resource Planning (ERP). Para que surja esta implementación primero ocurrió se planteó que Cisco necesitaba un cambio por el crecimiento que obtuvieron.
+      </Typography>
 
-      Donde los principales problemas estaban relacionados a la gestión de la información en papel, sin profundizar, ciertos aspectos del manejo de esta información se veían comprometidos: disponibilidad, seguridad, consistencia y redundancia entre otras cuestiones.
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        Fue allí, que surgieron problemas en las áreas funcionales, como no poder expandirse por aplicar parches al sistema perdiendo cada vez más en grado de redundancia, confiabilidad y mantenibilidad.
+      </Typography>
 
-      Para llevar a cabo esta sistematización total de los procesos se optó por contratar a una consultora llamada Compunet que conocía de una manera profunda la solución de Planificación de Recursos Empresariales (ERP) que brindaba SAP, que busca automatizar procesos de la empresa, disponibilidad de la información, centralizar áreas de trabajo en un único sistema, entre otras cosas.
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        El punto de quiebre fue cuando ocurrió el apagón de sus sistemas, lo que llevó a que toda la compañía estuviera parada por dos días, esto llevó a que los gerentes tomaran una decisión de cambio.
+      </Typography>
 
-    </Typography>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        Fue así que eligieron a KPMG como socio de integración, quienes ayudarían a CISCO a seleccionar e implementar una solución acorde a la compañía. Luego de un relevamiento en el mercado, Oracle fue elegida como el ERP que cubría las necesidades de Cisco. Los factores de decisión fueron que el fuerte de este ERP era el área manufactura, prometía nueva funcionalidad al paquete y que ofrecía flexibilidad.
+      </Typography>
+      
+      <Box m={1}/>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image="https://www.e-global.es/images/stories/ERP-CRM-diferencias.jpg"
+            title="ERP"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="h2">
+              Sistema de planificación de recursos empresariales
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              Son sistemas de información gerenciales que integran y manejan muchos de los negocios asociados con las operaciones de producción y de los aspectos de distribución de una compañía en la producción de bienes o servicios.
+            </Typography>
+          </CardContent>
+        </CardActionArea>
 
-    <Typography variant="body1" gutterBottom>
+      </Card>
+      <Box m={1}/>
 
-    La adquisición del sistema no fue sencilla, puesto a que SAP traía un conjunto de soluciones predefinidas y estas no se adecuaban al 100% a las necesidades del hospital, esto produjo una puja entre jefes de áreas del hospital y los desarrolladores de la consultora. En esta puja se llegaba a una conciliación entre ambas partes donde los médicos argumentaban que lo que SAP les brindaba no les iba a resultar útil, necesitaban soluciones más específicas. Y por otro lado, los desarrolladores remarcaban que no eran necesarias todas esas implementaciones puntuales, que era el hospital el que debía adaptarse a SAP y no viceversa debido a que consideraban que SAP seguía buenas prácticas.
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        Luego de la elección, el equipo se centró en los tiempos y costos del proyecto. Se presentó el proyecto ante la alta gerencia y se aprobó.
+      </Typography>
 
-    El desarrollo del sistema completo entre negociaciones de funcionalidad duró 1 año, que fue lanzado de una manera no escalonada, mencionada en el texto como “Bigbang”. Esto fue un golpe duro para los empleados del hospital, que acostumbrados a trabajar con papeles tuvieron que adaptarse a la fuerza a la nueva forma de trabajar que no solo cambia el hecho de digitalizar la información, sino que la implementación de este sistema cambia totalmente la forma de trabajar en el hospital.
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        Luego de la aprobación, el equipo descompuso la implementación en fases, de manera tal de que en cada fase basarse en el trabajo anterior, así poder conocer más el software.
+      </Typography>
 
-    Tras 6 meses de una complicada adaptación, con capacitaciones y soporte 24/7 al fin se veía la esperada mejora en como se pensaba que debía funcionar el sistema hablando de eficiencia y agilidad en los procesos. Sin embargo previo a estos meses se llegó incluso a cuestionar si el sistema realmente servía para agilizar y optimizar los procesos del hospital, debido a que en un principio todo era más lento que con papel. Algunos empleados llegaron a pensar que el sistema a mediano o largo plazo iba a terminar ocupando sus puestos de trabajo.
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        En la primera fase, se armaron dos equipos, uno para capacitarse en en las aplicaciones de Oracle, mientras que el otro equipo ponía en funcionamiento las aplicaciones. Posteriormente a esto, hicieron una reunión entre todos los equipos y delinearon como iban a proseguir.
+      </Typography>
 
-    </Typography>
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        Ya en la siguiente fase, las lecciones aprendidas de la fase anterior salieron a la luz, era inevitable realizar modificaciones y pensando en futuro, sería difícil de mantener. El foco en esta fase fue poner en marcha cada módulo en el ERP. Por esta tarea, se descubre las falencias que Oracle contenía para soportar todos los requisitos de los procesos de Cisco, entonces, en esta fase comienza lo que era inevitable, la modificación del ERP que ofrecía Oracle.
+      </Typography>
 
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        En la fase 2, el alcance del proyecto había incrementado no solo para cumplir con las modificaciones sino para agregar un nuevo paquete de soporte, porque el primero no cumplía al 100% con lo necesitado. Esta fase finalizó con la puesta en marcha de las primeras grandes modificaciones.
+      </Typography>
+
+      <Typography variant="subtitle1" gutterBottom align="justify">
+        El proyecto fue un éxito luego de su estabilización pero como lecciones aprendidas luego de la implementación, fueron los problemas con la arquitectura y las dimensiones del hardware. En contrapartida, otra lección aprendida fue la de no probar con un banco de datos grandes de manera tal de sobrecargar el sistema y validar si la cantidad de transacciones diarias iban a ser soportadas.
+      </Typography>
+      
+      </Grid>
     </>
   )
 }

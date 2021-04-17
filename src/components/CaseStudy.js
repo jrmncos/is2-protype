@@ -9,6 +9,8 @@ import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Diamond from "../synthesis/Diamond";
+import GreatHack from "../synthesis/GreatHack";
+import IndieGames from "../synthesis/IndieGames";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -50,6 +52,10 @@ export default function CaseStudy({params}) {
         return <Cisco/>
       case "diamond":
         return <Diamond/>
+      case "greathack":
+        return <GreatHack/>
+      case "indiegames":
+        return <IndieGames/>
       default:
         return <Home/>
     }
