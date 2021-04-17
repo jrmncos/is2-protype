@@ -1,6 +1,5 @@
-import { CardHeader, Grid, TextField } from "@material-ui/core";
+import { CardHeader, Grid } from "@material-ui/core";
 import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -15,141 +14,149 @@ export default function ResultSimulation()  {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-            <Box m={2}/>
-            <CardHeader
-              className={classes.titleResultados}
-              title={
-                <Typography variant="h6" component="h2">
-                  Resultados de la simulación
-                </Typography>
-              }
-            />
-            <CardActionArea >
-              <Box m={1}/>
-              <Grid item xs={12}>
-                <Card className={classes.root}>
-                  <CardHeader
-                    className={classes.subtitleResults}
-                    title={
-                      <Typography 
-                      variant="h4" component="h2">
-                        Duración
-                      </Typography>
-                    }
-                  />
-                  <CardActionArea>
-                    <CardContent>
-                    <div>
-                      <Typography variant="h5" component="h2" display="inline">El proyecto duró </Typography>
-                      <RedTextTypography variant="h5" component="h2" display="inline">26  </RedTextTypography>
-                      <Typography variant="h5" component="h2" display="inline">semanas de</Typography>
-                      <BlueTextTypography variant="h5" component="h2" display="inline"> 24 </BlueTextTypography>       
-                      <Typography variant="h5" component="h2" display="inline">estimadas. </Typography>             
-                    </div>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            </CardActionArea>
-            
-            <CardActionArea >
-              <Box m={1}/>
-              <Grid item xs={12}>
-                <Card className={classes.root}>
-                  <CardHeader
-                    className={classes.subtitleTareas}
-                    title={
-                      <Typography 
-                      variant="h4" component="h2">
-                        Tareas realizadas
-                      </Typography>
-                    }
-                  />
-                  <CardActionArea>
-                    <CardContent>
-                    <div>
-                      <Typography variant="h5" component="h2" display="inline">Se realizaron </Typography>
-                      <RedTextTypography variant="h5" component="h2" display="inline">197  </RedTextTypography>
-                      <Typography variant="h5" component="h2" display="inline">tareas de </Typography>
-                      <BlueTextTypography variant="h5" component="h2" display="inline">214 </BlueTextTypography>       
-                      <Typography variant="h5" component="h2" display="inline">totales. </Typography>                               
-                    </div>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            </CardActionArea>
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+      backgroundColor="#556B2F">
 
-            <CardActionArea >
-              <Box m={1}/>
-              <Grid item xs={12}>
-                <Card className={classes.root}>
-                  <CardHeader
-                    className={classes.subtitlePresupuesto}
-                    title={
-                      <Typography 
-                      variant="h4" component="h2">
-                        Presupuesto
-                      </Typography>
-                    }
-                  />
-                  <CardActionArea>
-                    <CardContent>
-                    <div>
-                      <Typography variant="h5" component="h2" display="inline">Se utilizó </Typography>
-                      <RedTextTypography variant="h5" component="h2" display="inline">$56200  </RedTextTypography>
-                      <Typography variant="h5" component="h2" display="inline">de </Typography>
-                      <BlueTextTypography variant="h5" component="h2" display="inline">$62000 </BlueTextTypography>       
-                      <Typography variant="h5" component="h2" display="inline">del presupuesto. </Typography>                               
-                    </div>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            </CardActionArea>
-
-            <CardActionArea >
-              <Box m={1}/>
-              <Grid item xs={12}>
-                <Card className={classes.root}>
-                  <CardHeader
-                    className={classes.subtitleGraph}
-                    title={
-                      <Typography 
-                      variant="h4" component="h2">
-                        Gráfico
-                      </Typography>
-                    }
-                  />
-                  <CardActionArea>
-                    <CardContent>
-                    <div>
-                      <Grid
-                          container
-                          direction="row"
-                          justify="flex-start"
-                          alignItems="center"
-                          spacing={1}
-                        >
-                          <Grid item xs={6}>
-                            <img  src={graficoScrum}  height='100%' width='100%'/>
-                          </Grid>
-                          <Grid item xs={6}>
-                            <Typography variant="h6" component="h2" display="inline">El proyecto superó un poco las semanas estimadas, rendimiento del equipo fue optimo, sin embargo la próxima vez podrias </Typography>
-                            <RedTextTypography variant="h6" component="h2" display="inline">no exigir tantas horas extras</RedTextTypography>
-                            <Typography variant="h6" component="h2" display="inline">. </Typography>  
-                            <Typography variant="h6" component="h2" display="inline">También ten en cuenta el presupuesto, que sobre al final del proyecto no es un buen</Typography>
-                          </Grid>
-                        </Grid>
+      <Card className={classes.root}>
+              <Box m={2}/>
+              <CardHeader
+                className={classes.titleResultados}
+                title={
+                  <Typography variant="h6" component="h2">
+                    Resultados de la simulación
+                  </Typography>
+                }
+              />
+              <CardActionArea >
+                <Box m={1}/>
+                <Grid item xs={12}>
+                  <Card className={classes.root}>
+                    <CardHeader
+                      className={classes.subtitleResults}
+                      title={
+                        <Typography 
+                        variant="h4" component="h2">
+                          Duración
+                        </Typography>
+                      }
+                    />
+                    <CardActionArea>
+                      <CardContent>
+                      <div>
+                        <Typography variant="h5" component="h2" display="inline">El proyecto duró </Typography>
+                        <RedTextTypography variant="h5" component="h2" display="inline">26  </RedTextTypography>
+                        <Typography variant="h5" component="h2" display="inline">semanas de</Typography>
+                        <BlueTextTypography variant="h5" component="h2" display="inline"> 24 </BlueTextTypography>       
+                        <Typography variant="h5" component="h2" display="inline">estimadas. </Typography>             
                       </div>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            </CardActionArea>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              </CardActionArea>
+              
+              <CardActionArea >
+                <Box m={1}/>
+                <Grid item xs={12}>
+                  <Card className={classes.root}>
+                    <CardHeader
+                      className={classes.subtitleTareas}
+                      title={
+                        <Typography 
+                        variant="h4" component="h2">
+                          Tareas realizadas
+                        </Typography>
+                      }
+                    />
+                    <CardActionArea>
+                      <CardContent>
+                      <div>
+                        <Typography variant="h5" component="h2" display="inline">Se realizaron </Typography>
+                        <RedTextTypography variant="h5" component="h2" display="inline">197  </RedTextTypography>
+                        <Typography variant="h5" component="h2" display="inline">tareas de </Typography>
+                        <BlueTextTypography variant="h5" component="h2" display="inline">214 </BlueTextTypography>       
+                        <Typography variant="h5" component="h2" display="inline">totales. </Typography>                               
+                      </div>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              </CardActionArea>
 
-            </Card>    
+              <CardActionArea >
+                <Box m={1}/>
+                <Grid item xs={12}>
+                  <Card className={classes.root}>
+                    <CardHeader
+                      className={classes.subtitlePresupuesto}
+                      title={
+                        <Typography 
+                        variant="h4" component="h2">
+                          Presupuesto
+                        </Typography>
+                      }
+                    />
+                    <CardActionArea>
+                      <CardContent>
+                      <div>
+                        <Typography variant="h5" component="h2" display="inline">Se utilizó </Typography>
+                        <RedTextTypography variant="h5" component="h2" display="inline">$56200  </RedTextTypography>
+                        <Typography variant="h5" component="h2" display="inline">de </Typography>
+                        <BlueTextTypography variant="h5" component="h2" display="inline">$62000 </BlueTextTypography>       
+                        <Typography variant="h5" component="h2" display="inline">del presupuesto. </Typography>                               
+                      </div>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              </CardActionArea>
+
+              <CardActionArea >
+                <Box m={1}/>
+                <Grid item xs={12}>
+                  <Card className={classes.root}>
+                    <CardHeader
+                      className={classes.subtitleGraph}
+                      title={
+                        <Typography 
+                        variant="h4" component="h2">
+                          Gráfico
+                        </Typography>
+                      }
+                    />
+                    <CardActionArea>
+                      <CardContent>
+                      <div>
+                        <Grid
+                            container
+                            direction="row"
+                            justify="flex-start"
+                            alignItems="center"
+                            spacing={1}
+                          >
+                            <Grid item xs={6}>
+                              <img  src={graficoScrum}  height='100%' width='100%'/>
+                            </Grid>
+                            <Grid item xs={6}>
+                              <Typography variant="h6" component="h2" display="inline">El proyecto superó un poco las semanas estimadas, rendimiento del equipo fue optimo, sin embargo la próxima vez podrias </Typography>
+                              <RedTextTypography variant="h6" component="h2" display="inline">no exigir tantas horas extras</RedTextTypography>
+                              <Typography variant="h6" component="h2" display="inline">. </Typography>  
+                              <Typography variant="h6" component="h2" display="inline">También ten en cuenta el presupuesto, que sobre al final del proyecto no es un buen</Typography>
+                            </Grid>
+                          </Grid>
+                        </div>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              </CardActionArea>
+
+              </Card>    
+            </Grid>
   );
 }
 
