@@ -10,6 +10,8 @@ import Programmer from "./Programmer";
 import { Box } from '@material-ui/core';
 import Loader from "./Loader";
 
+import ResultSimulation from './simulator/ResultSimulation.js'
+
 const useStyles = makeStyles({
   root: {
     maxWidth: '100%',
@@ -321,33 +323,12 @@ export default function Simulator() {
             </Grid>
           </Grid>
         </Grid>
-
+        
         <Grid item xs={8}>
-          <Card className={classes.root}>
-            <Box m={2}/>
-            <CardHeader
-              className={classes.titleResultados}
-              title={
-                <Typography variant="h6" component="h2">
-                  Resultados de la simulación
-                </Typography>
-              }
-            />
-            <CardActionArea >
-              <CardContent className={classes.resultados}>
-                  <Typography variant="h4" component="h2">
-                    Duración
-                  </Typography>
-                  <Typography variant="h4" component="h2">
-                    26 semanas de 24 estimadas
-                  </Typography>
-                {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation}/>}
-              </CardContent>
-            </CardActionArea>
-          </Card>
+        {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation}/>}{!loadSimulation && <ResultSimulation/>}
         </Grid>
 
       </Grid>
-    </>
+    </>  
   )
 }

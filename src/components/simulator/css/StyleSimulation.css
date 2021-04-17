@@ -1,0 +1,49 @@
+.root {
+    max-width: '100%';
+    height: '100%';
+}
+.media {
+    padding-top: '81.25%';
+    border-radius: '50%';
+    margin: '28px';
+}
+.titleTeam {
+    color: '#d5c7de';
+    height:'20px';
+    width:'380px';
+    text-align: "center";
+    margin-right: "10px";
+    margin-left: "10px";
+}
+.titleHoras {
+    background-color:'#f6aa9e';
+    height:'20px';
+    width:'380px';
+    text-align: "center";
+    margin-right: "10px";
+    margin-left: "10px";
+} 
+.titleMeetings {
+    background-color:'#f6ca9e';
+    height:'20px';
+    width:'380px';
+    text-align: "center";
+    margin-right: "10px";
+    margin-left: "10px";
+}
+.titleEstimacion {
+    color:rgb(218, 46, 23);
+    height:'20px';
+    width:'380px';
+    text-align: "center";
+    margin-right: "10px";
+    margin-left: "10px";
+}
+.titleResultados {
+    color:rgb(28, 117, 196);
+    height:'20px';
+    font-size: large;
+    width:'98%';
+    text-align: "center";
+    margin-left: "1%";
+}
