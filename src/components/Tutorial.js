@@ -7,6 +7,7 @@ import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Capitalism from "../tutorials/Capitalism";
+import Genero from "../tutorials/Genero";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -44,6 +45,8 @@ export default function Tutorial({params}) {
     switch(params.id){
       case "capitalism":
         return <Capitalism/>
+      case "genero":
+        return <Genero/>
       default:
         return <Home/>
     }
