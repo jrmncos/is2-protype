@@ -69,9 +69,11 @@ const useStyles = makeStyles({
 export default function Simulator() {
   const classes = useStyles();
   const [loadSimulation, setLoadSimulation] = useState(false)
+  const [renderResults, setRenderResults] = useState(false)
 
   const handleComenzarSimulacion = () =>{
     setLoadSimulation(!loadSimulation)
+    setRenderResults(false)
   }
 
   return (
@@ -325,7 +327,12 @@ export default function Simulator() {
         </Grid>
         
         <Grid item xs={8}>
-        {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation}/>}{!loadSimulation && <ResultSimulation/>}
+          <Card>
+            <Box m={1.5}/>
+            {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation} setRenderResults = {setRenderResults}/>}
+            {renderResults && <ResultSimulation/>}
+            <Box m={1.5}/>
+          </Card>
         </Grid>
 
       </Grid>

@@ -178,7 +178,7 @@ export default function Header(props) {
             style={{textTransform: 'none'}}
             className={classes.toolbarLink}
             >
-                Tutoriales
+              Tutoriales
           </Button>
 
           <Menu
@@ -205,7 +205,7 @@ export default function Header(props) {
             style={{textTransform: 'none'}}
             className={classes.toolbarLink}
             >
-                Punto 7
+            Punto 7
           </Button>
 
           <Button 

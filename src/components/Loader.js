@@ -3,7 +3,6 @@ import ContentLoader from "react-content-loader";
 
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,25 +10,30 @@ const useStyles = makeStyles((theme) => ({
     '& > * + *': {
       marginTop: theme.spacing(2),
     },
-    position: "absolute",
-    left: "48%",
-    transform: "translate(-50%, -50%)"
+    position: "center",
+    marginLeft: "170px",
   },
 }));
 
 
-export default function Loader({setLoadSimulation, cantSemanas}){
+export default function Loader({setLoadSimulation, cantSemanas, setRenderResults}){
   const classes = useStyles();
   const [progress, setProgress] = useState(1);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= cantSemanas ? setLoadSimulation(false): prevProgress + 1));
+      if(progress >= cantSemanas){
+        setLoadSimulation(false)
+        setRenderResults(true)
+      }
+      else{
+        setProgress(progress+1)
+      }
     }, 400);
     return () => {
       clearInterval(timer);
     };
-  }, [setLoadSimulation, cantSemanas]);
+  }, [setLoadSimulation, cantSemanas, setRenderResults, progress]);
 
   return(
     <>
@@ -45,14 +49,12 @@ export default function Loader({setLoadSimulation, cantSemanas}){
         <rect x="0" y="34" rx="2" ry="2" width="800" height="10" /> 
         <rect x="0" y="60" rx="2" ry="2" width="400" height="400" />
       </ContentLoader>
-      <Box m={2}/>
 
       <div className={classes.root}>
         <LinearProgress />
         <h1>Semana: {progress}</h1>
       </div>
       
-
     </>
   )
 }
