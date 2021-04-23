@@ -12,39 +12,20 @@ import Diamond from "../synthesis/Diamond";
 import GreatHack from "../synthesis/GreatHack";
 import IndieGames from "../synthesis/IndieGames";
 
+import NavArticles from "./NavArticles";
+
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
 }));
 
-const sidebar = {
-  title: 'Video destacado',
-  description:
-    'El primer paso para cambiar nuestro Hardware Neuronal, es darse cuenta que somos dueños de nuestros pensamientos.',
-  archives: [
-    { title: 'Indie Games', url: '#' },
-    { title: 'Scrum', url: '#' },
-    { title: 'Extreme Programmin', url: '#' },
-    { title: 'Cisco', url: '#' },
-    { title: 'Extended Mind', url: '#' },
-    { title: 'Computación Decolonial', url: '#' },
-    { title: 'Kanban', url: '#' },
-    { title: 'Simulacion', url: '#' },
-  ],
-  social: [
-    { name: 'GitHub (Repo del Proyecto)', icon: GitHubIcon },
-    { name: 'UNGS', icon: FacebookIcon },
-  ],
-};
 
 export default function CaseStudy({params}) {
   const classes = useStyles();
   const caseStudy = {id: params.id}
 
   const renderSwitch = (params) => {
-    console.log(params)
-    console.log(params.id)
     switch(params.id){
       case "fvl":
         return <FVL/>
@@ -56,6 +37,23 @@ export default function CaseStudy({params}) {
         return <GreatHack/>
       case "indiegames":
         return <IndieGames/>
+      default:
+        return <Home/>
+    }
+  }
+
+  const renderNavArticles = (params) => {
+    switch(params.id){
+      case "fvl":
+        return <NavArticles next={articlesUrls.diamond} />
+      case "diamond":
+        return <NavArticles prev={articlesUrls.flv} next={articlesUrls.cisco} />
+      case "cisco":
+        return <NavArticles prev={articlesUrls.diamond} next={articlesUrls.greathack} />
+      case "greathack":
+        return <NavArticles prev={articlesUrls.cisco} next={articlesUrls.indiegames} />
+      case "indiegames":
+        return <NavArticles prev={articlesUrls.greathack}/>
       default:
         return <Home/>
     }
@@ -78,9 +76,43 @@ export default function CaseStudy({params}) {
             social={sidebar.social}
           />
         </Grid>
+        <Grid item xs={8}>
+          {
+            renderNavArticles(caseStudy)
+          }
+        </Grid>
       </Grid>
+      
+      
     </main>
     </Container>
   )
+}
 
+const sidebar = {
+  title: 'Video destacado',
+  description:
+    'El primer paso para cambiar nuestro Hardware Neuronal, es darse cuenta que somos dueños de nuestros pensamientos.',
+  archives: [
+    { title: 'Indie Games', url: '#' },
+    { title: 'Scrum', url: '#' },
+    { title: 'Extreme Programmin', url: '#' },
+    { title: 'Cisco', url: '#' },
+    { title: 'Extended Mind', url: '#' },
+    { title: 'Computación Decolonial', url: '#' },
+    { title: 'Kanban', url: '#' },
+    { title: 'Simulacion', url: '#' },
+  ],
+  social: [
+    { name: 'GitHub (Repo del Proyecto)', icon: GitHubIcon },
+    { name: 'UNGS', icon: FacebookIcon },
+  ],
+};
+
+const articlesUrls = {
+  flv: {title: "Fundación Valle Lili", url: "/casestudy/fvl"},
+  diamond: {title: "Hay diamantes en la mina de datos", url: "/casestudy/diamond"},
+  cisco: {title: "Cisco System: Implementación ERP", url: "/casestudy/cisco"},
+  greathack: {title: "The Great Hack", url:"/casestudy/greathack"},
+  indiegames: {title: "Indie Games", url:"/casestudy/indiegames"}
 }

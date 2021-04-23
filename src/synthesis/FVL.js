@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { Box } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -34,6 +34,9 @@ export default function FLV() {
     <Typography variant="h3" component="h2" gutterBottom>
       Fundación Valle del Lili: Implementación de SAP
     </Typography>
+    
+    <Divider/>
+    <Box m={1}/>
 
     <Typography variant="subtitle1" gutterBottom align="justify">
       El Hospital Fundación del Valle de Colombia en el año 2011 decidió sistematizar todos los procesos que involucran la atención a pacientes, entre ellas se incluyen principalmente historias clínicas, órdenes médicas, gestión de medicamentos e insumos, gestión de ingresos y costos en general, seguimiento de pago de médicos.
