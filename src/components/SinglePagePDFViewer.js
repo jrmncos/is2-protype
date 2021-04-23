@@ -33,7 +33,7 @@ export default function SinglePagePDFViewer(props) {
         options={{ workerSrc: "/pdf.worker.js" }}
         onLoadSuccess={onDocumentLoadSuccess}
       >
-        <Page pageNumber={pageNumber} height={'800'} scale={1.4}/>
+        <Page pageNumber={pageNumber} height={'700'} scale={1.5}/>
       </Document>
       <div>
         <p>

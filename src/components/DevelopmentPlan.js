@@ -5,7 +5,8 @@ import SinglePagePDFViewer from './SinglePagePDFViewer'
 import Container from '@material-ui/core/Container';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import { Grid } from "@material-ui/core";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, Grid, Typography } from "@material-ui/core";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import pdf from "../resources/plan.pdf"
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +43,50 @@ export default function DevelopmentPlan() {
       <main>
         <Grid container spacing={4} className={classes.mainGrid} m={4}>
           <Grid item xs={8}>
-            <SinglePagePDFViewer pdf={pdf} />
+
+            <Typography variant="h3" component="h2" gutterBottom>
+              Plan de Desarrollo
+            </Typography>
+
+            <Divider/>
+
+            <Box m={1}/>
+
+            <Typography variant="subtitle1" gutterBottom align="justify">
+              A continuación podrás ver dos modelos de planes de desarrollo orientados a Procesos unificados. Ambos ejemplos simulan ser los proyectos de Cisco System y fundacion Valle de Lili (respectivamente), segun la informacion que se haya podido obtener de estos proyectos de los textos de estudio (aqui poner los nombres de los articulos), la informacion con la que no se cuenta en estos textos se ha completado en los planes de desarrollo a modo orientativo con datos que posiblemente sean irreales.
+            </Typography>
+
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Typography >Caso Cisco</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Grid container>
+                  <SinglePagePDFViewer pdf={pdf} />
+                </Grid>
+              </AccordionDetails>
+            </Accordion>
+
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel2a-content"
+                id="panel2a-header"
+              >
+                <Typography >Caso Fundación Valle del Lili </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Grid container>
+                  <SinglePagePDFViewer pdf={pdf} />
+                </Grid>
+              </AccordionDetails>
+            </Accordion>
+
+            
           </Grid>
           <Grid item xs={4}>
             <Sidebar
