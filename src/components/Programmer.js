@@ -1,10 +1,13 @@
-import { Box, Button, Chip, Input, InputLabel, MenuItem, Select } from "@material-ui/core";
+import { Avatar, Box, Button, Chip, Input, InputLabel, MenuItem, Select } from "@material-ui/core";
 import { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import junior from '../images/junior.png';
+import ssr from '../images/ssr.png';
+import sr from '../images/sr.png';
 
 const useStyles = makeStyles((theme) => ({
   chips: {
@@ -13,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   chip: {
     margin: 2,
-  }
+  },
 }));
 
 const softSkills = [
@@ -36,17 +39,26 @@ const MenuProps = {
   },
 };
 
+
+
 export default function Programmer(){
   const [open, setOpen] = useState(false);
-  const [age, setAge] = useState('');
+  const [horas, setHoras] = useState('');
   const [skills, setSkills] = useState([]);
+
+  const [seniorityAvatar, setSeniorityAvatar] = useState(junior);
   
   //const theme = useTheme()
   const classes = useStyles();
 
+  
   const handleChangeExpertiz = (event) => {
-    setAge(event.target.value);
+    setSeniorityAvatar(event.target.value);
   };
+
+  const handleChangeCantHoras = (event) => {
+    setHoras(event.target.value)
+  }
 
   const handleChangeSoftSkills = (event) => {
     setSkills(event.target.value)
@@ -62,9 +74,10 @@ export default function Programmer(){
 
   return(
     <>
-      <Button variant="contained" color="primary" onClick={handleClickOpen} style={{maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px'}}>
-        +
-      </Button>
+
+
+      <Avatar src={seniorityAvatar} onClick={handleClickOpen}/>
+      
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
         <DialogTitle id="form-dialog-title">Agregar miembro del equipo</DialogTitle>
         <DialogContent>
@@ -73,13 +86,13 @@ export default function Programmer(){
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={age}
+            value={seniorityAvatar}
             onChange={handleChangeExpertiz}
             fullWidth
           >
-            <MenuItem value={10}>Junior</MenuItem>
-            <MenuItem value={20}>Semi Senior</MenuItem>
-            <MenuItem value={30}>Senior</MenuItem>
+            <MenuItem value={junior}>Junior</MenuItem>
+            <MenuItem value={ssr}>Semi Senior</MenuItem>
+            <MenuItem value={sr}>Senior</MenuItem>
           </Select>
 
           <Box m={2} />
@@ -88,13 +101,13 @@ export default function Programmer(){
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={age}
-            onChange={handleChangeExpertiz}
+            value={horas}
+            onChange={handleChangeCantHoras}
             fullWidth
           >
-            <MenuItem value={10}>4</MenuItem>
-            <MenuItem value={20}>6</MenuItem>
-            <MenuItem value={30}>8</MenuItem>
+            <MenuItem value={4}>4</MenuItem>
+            <MenuItem value={6}>6</MenuItem>
+            <MenuItem value={8}>8</MenuItem>
           </Select>
 
           <Box m={2} />
