@@ -169,6 +169,18 @@ export default function Header(props) {
               Simulación
             </Button>
           </Link>
+
+          <Link to={"/developmentplan"} >
+            <Button 
+              size="small"
+              color="inherit"
+              noWrap
+              variant="body2"
+              style={{textTransform: 'none'}}
+            >
+              Plan de desarrollo
+            </Button>
+          </Link>
           
           <Button 
             onClick={handleMenuTutorial}
