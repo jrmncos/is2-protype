@@ -96,7 +96,7 @@ const sidebar = {
   archives: [
     { title: 'Indie Games', url: '#' },
     { title: 'Scrum', url: '#' },
-    { title: 'Extreme Programmin', url: '#' },
+    { title: 'Extreme Programming', url: '#' },
     { title: 'Cisco', url: '#' },
     { title: 'Extended Mind', url: '#' },
     { title: 'Computación Decolonial', url: '#' },

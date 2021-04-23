@@ -9,8 +9,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import ReactPlayer from "react-player";
 import { Box } from "@material-ui/core";
+import YouTube from 'react-youtube';
 
 const useStyles = makeStyles({
   root: {
@@ -22,10 +22,24 @@ const useStyles = makeStyles({
     margin: '28px'
 },
 });
+/*
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 1,
+  },
+*/
+const opts = {
+  height: '500',
+  width: '100%'
+};
 
 export default function Diamond() {
   const classes = useStyles();
 
+  const onReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  }
 
   return (
     <>
@@ -77,7 +91,8 @@ export default function Diamond() {
     >
       <Box m={1}/>
 
-      <ReactPlayer url='https://youtu.be/aLIeEucdvSI' width={'100%'} height={500}/>
+
+      <YouTube videoId="aLIeEucdvSI" opts={opts} onReady={onReady} />
 
 
       <Typography variant="subtitle1" gutterBottom align="justify">
