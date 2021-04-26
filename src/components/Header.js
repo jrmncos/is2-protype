@@ -154,7 +154,12 @@ export default function Header(props) {
               <Link to={"/casestudy/indiegames"}>
                 Indie Games
               </Link>
-            </MenuItem>      
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuCase}>
+              <Link to={"/casestudy/socialdilemma"}>
+                El dilema de las redes sociales
+              </Link>
+            </MenuItem>        
           </Menu>
 
 

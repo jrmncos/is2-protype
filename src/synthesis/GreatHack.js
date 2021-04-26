@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { Box } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -33,7 +33,8 @@ export default function GreatHack(){
       <Typography variant="h3" component="h2" gutterBottom>
         The Great Hack
       </Typography>
-
+      <Divider/>
+      <Box m={1}/>
       <Typography variant="subtitle1" gutterBottom align="justify">
         The Great Hack o Nada es Privado es un documental de Netflix del año 2019, que expone la influencia de la consultora británica Cambridge Analytica (CA) en dos procesos políticos: las elecciones del 2016 en los Estados Unidos entre Donald Trump y Hillary Clinton, y el referéndum del Brexit en el Reino Unido. Además, el documental muestra sin profundizar demasiado, que CA también logró incidir en algunos otros procesos electorales con asiento en países de África y de Latinoamérica.
       </Typography>

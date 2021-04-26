@@ -11,7 +11,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import Diamond from "../synthesis/Diamond";
 import GreatHack from "../synthesis/GreatHack";
 import IndieGames from "../synthesis/IndieGames";
-
+import SocialDilemma from "../synthesis/SocialDilemma"
 import NavArticles from "./NavArticles";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,6 +37,8 @@ export default function CaseStudy({params}) {
         return <GreatHack/>
       case "indiegames":
         return <IndieGames/>
+      case "socialdilemma":
+        return <SocialDilemma/>
       default:
         return <Home/>
     }
@@ -53,7 +55,9 @@ export default function CaseStudy({params}) {
       case "greathack":
         return <NavArticles prev={articlesUrls.cisco} next={articlesUrls.indiegames} />
       case "indiegames":
-        return <NavArticles prev={articlesUrls.greathack}/>
+        return <NavArticles prev={articlesUrls.greathack} next={articlesUrls.socialdilemma}/>
+      case "socialdilemma":
+        return <NavArticles prev={articlesUrls.indiegames}/>
       default:
         return <Home/>
     }
@@ -114,5 +118,6 @@ const articlesUrls = {
   diamond: {title: "Hay diamantes en la mina de datos", url: "/casestudy/diamond"},
   cisco: {title: "Cisco System: Implementación ERP", url: "/casestudy/cisco"},
   greathack: {title: "The Great Hack", url:"/casestudy/greathack"},
-  indiegames: {title: "Indie Games", url:"/casestudy/indiegames"}
+  indiegames: {title: "Indie Games", url:"/casestudy/indiegames"},
+  socialdilemma: {title: "El dilema de las redes sociales", url: "/casestudy/socialdilemma"}
 }

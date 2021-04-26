@@ -9,7 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { Box } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
 import YouTube from 'react-youtube';
 
 const useStyles = makeStyles({
@@ -53,6 +53,9 @@ export default function Diamond() {
     <Typography variant="h3" component="h2" gutterBottom>
       Hay diamantes en la mina de datos 
     </Typography>
+    <Divider/>
+    <Box m={1}/>
+    
     <Grid item xs={4}>
     <Card className={classes.root}>
       <CardActionArea>

@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { Box } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
@@ -33,7 +33,9 @@ export default function GreatHack(){
       <Typography variant="h3" component="h2" gutterBottom>
         Cisco Systems: Implementación del Sistema ERP
       </Typography>
-
+      <Divider/>
+      <Box m={1}/>
+      
       <Typography variant="subtitle1" gutterBottom align="justify">
         Este caso de estudio, cuenta como CISCO systems llevó a cabo la implementación de un Enterprise Resource Planning (ERP). Para que surja esta implementación primero ocurrió se planteó que Cisco necesitaba un cambio por el crecimiento que obtuvieron.
       </Typography>
