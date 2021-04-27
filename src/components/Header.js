@@ -204,6 +204,12 @@ export default function Header(props) {
             onClose = {handleCloseMenuTutorial}
           >
             <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/atrapados"}>
+                Atrapados
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
               <Link to={"/tutorial/capitalism"}>
                 Capitalismo de plataformas
               </Link>
@@ -218,7 +224,13 @@ export default function Header(props) {
               <Link to={"/tutorial/atrapados"}>
                 Atrapados
               </Link>
-            </MenuItem>  
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/certifications"}>
+                Certificaciones
+              </Link>
+            </MenuItem>    
           </Menu>
 
           <Button 
