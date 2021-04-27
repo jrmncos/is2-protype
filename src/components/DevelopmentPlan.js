@@ -7,7 +7,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, Grid, Typography } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import pdf from "../resources/plan.pdf"
+import planCisco from "../resources/plan-cisco.pdf"
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -66,7 +66,7 @@ export default function DevelopmentPlan() {
               </AccordionSummary>
               <AccordionDetails>
                 <Grid container>
-                  <SinglePagePDFViewer pdf={pdf} />
+                  <SinglePagePDFViewer pdf={planCisco} />
                 </Grid>
               </AccordionDetails>
             </Accordion>
@@ -81,7 +81,7 @@ export default function DevelopmentPlan() {
               </AccordionSummary>
               <AccordionDetails>
                 <Grid container>
-                  <SinglePagePDFViewer pdf={pdf} />
+                  <SinglePagePDFViewer pdf={planCisco} />
                 </Grid>
               </AccordionDetails>
             </Accordion>
