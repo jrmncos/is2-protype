@@ -212,7 +212,13 @@ export default function Header(props) {
               <Link to={"/tutorial/genero"}>
                 Género en el contenido de la tecnología
               </Link>
-            </MenuItem> 
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/atrapados"}>
+                Atrapados
+              </Link>
+            </MenuItem>  
           </Menu>
 
           <Button 

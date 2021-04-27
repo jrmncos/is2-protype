@@ -8,6 +8,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Capitalism from "../tutorials/Capitalism";
 import Genero from "../tutorials/Genero";
+import Atrapados from "../tutorials/Atrapados";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -47,6 +48,8 @@ export default function Tutorial({params}) {
         return <Capitalism/>
       case "genero":
         return <Genero/>
+      case "atrapados":
+        return <Atrapados/>
       default:
         return <Home/>
     }
