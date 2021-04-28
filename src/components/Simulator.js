@@ -66,7 +66,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function Simulator() {
+export default function Simulator({nivel}) {
   const classes = useStyles();
   const [loadSimulation, setLoadSimulation] = useState(false)
   const [renderResults, setRenderResults] = useState(false)
@@ -83,7 +83,7 @@ export default function Simulator() {
           title={
             <>
             <Typography variant="h6" component="h2">
-              Indie Game: Un grupo de dos desarrolladores lo contrata como Project Manager Junior para ayudarlos con su proyecto. Deben lograr sacar el juego 'Supear Meat Boy' dentro de 10 semanas y cuentan con un presupuesto de $5000 dolares.
+              {nivel.descripcion}
             </Typography>
             <Box m={1}/>
             <Typography variant="h6" component="h2">
@@ -258,7 +258,7 @@ export default function Simulator() {
                           <TextField
                             id="standard-read-only-input"
                             label="Disponible"
-                            defaultValue="$5000"
+                            defaultValue={nivel.presupuesto}
                             InputProps={{
                               readOnly: true,
                             }}
@@ -306,7 +306,7 @@ export default function Simulator() {
                           <TextField
                             id="standard-read-only-input"
                             label="Objetivo"
-                            defaultValue="10"
+                            defaultValue={nivel.semanas}
                             InputProps={{
                               readOnly: true,
                             }}
@@ -345,8 +345,8 @@ export default function Simulator() {
         <Grid item xs={8}>
           <Card className={classes.root}>
             <Box m={1.5}/>
-            {loadSimulation && <Loader cantSemanas={25} setLoadSimulation={setLoadSimulation} setRenderResults = {setRenderResults}/>}
-            {renderResults && <ResultSimulation/>}
+            {loadSimulation && <Loader nivel={nivel} setLoadSimulation={setLoadSimulation} setRenderResults = {setRenderResults}/>}
+            {renderResults && <ResultSimulation nivel={nivel}/>}
             <Box m={1.5}/>
           </Card>
         </Grid>

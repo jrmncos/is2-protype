@@ -12,9 +12,11 @@ import ImageZoom from 'react-medium-image-zoom'
 import graficoScrum from'../../images/graph.png';
 
 
-export default function ResultSimulation()  {
+export default function ResultSimulation({nivel})  {
   const classes = useStyles();
-  
+
+  console.log("Result simulator")
+  console.log(nivel)
 
   return (
     <Grid
@@ -23,7 +25,8 @@ export default function ResultSimulation()  {
       justify="center"
       alignItems="center"
       spacing={2}
-    >
+    > 
+    
       <Grid item xs={11}>
         <Card className={classes.root}>
           <CardHeader
@@ -53,9 +56,9 @@ export default function ResultSimulation()  {
           <CardActionArea>
             <CardContent>
               <Typography variant="h6" component="h2" display="inline">El proyecto duró </Typography>
-              <RedTextTypography variant="h6" component="h2" display="inline">26  </RedTextTypography>
+              <RedTextTypography variant="h6" component="h2" display="inline">{nivel.semanas+2}  </RedTextTypography>
               <Typography variant="h6" component="h2" display="inline">semanas de</Typography>
-              <BlueTextTypography variant="h6" component="h2" display="inline"> 24 </BlueTextTypography>       
+              <BlueTextTypography variant="h6" component="h2" display="inline"> {nivel.semanas} </BlueTextTypography>       
               <Typography variant="h6" component="h2" display="inline">estimadas. </Typography>             
             </CardContent>
           </CardActionArea>
@@ -77,9 +80,9 @@ export default function ResultSimulation()  {
           <CardActionArea>
             <CardContent>
               <Typography variant="h6" component="h2" display="inline">Se realizaron </Typography>
-              <RedTextTypography variant="h6" component="h2" display="inline">197  </RedTextTypography>
+              <RedTextTypography variant="h6" component="h2" display="inline">{nivel.tareas-10} </RedTextTypography>
               <Typography variant="h6" component="h2" display="inline">tareas de </Typography>
-              <BlueTextTypography variant="h6" component="h2" display="inline">214 </BlueTextTypography>       
+              <BlueTextTypography variant="h6" component="h2" display="inline">{nivel.tareas} </BlueTextTypography>       
               <Typography variant="h6" component="h2" display="inline">totales. </Typography>                               
             </CardContent>
           </CardActionArea>
@@ -101,9 +104,9 @@ export default function ResultSimulation()  {
             <CardActionArea>
               <CardContent>
                 <Typography variant="h6" component="h2" display="inline">Se utilizó </Typography>
-                <RedTextTypography variant="h6" component="h2" display="inline">$56200  </RedTextTypography>
+                <RedTextTypography variant="h6" component="h2" display="inline">{"$"+(parseInt(nivel.presupuesto.split("$")[1])+1000)}  </RedTextTypography>
                 <Typography variant="h6" component="h2" display="inline">de </Typography>
-                <BlueTextTypography variant="h6" component="h2" display="inline">$62000 </BlueTextTypography>       
+                <BlueTextTypography variant="h6" component="h2" display="inline">{nivel.presupuesto} </BlueTextTypography>       
                 <Typography variant="h6" component="h2" display="inline">del presupuesto. </Typography>                               
               </CardContent>
             </CardActionArea>

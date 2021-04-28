@@ -16,24 +16,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Loader({setLoadSimulation, cantSemanas, setRenderResults}){
+export default function Loader({nivel, setLoadSimulation, setRenderResults}){
   const classes = useStyles();
   const [progress, setProgress] = useState(1);
+  const [onProgress, setOnProgress] = useState(true);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if(progress >= cantSemanas){
-        setLoadSimulation(false)
-        setRenderResults(true)
+      if(onProgress){
+        for(var i=0; i<nivel.eventos.length;i++){
+          var num=Math.random();      
+          if(progress > 7 && !nivel.eventos[i].acontecio && num < nivel.eventos[i].proba){
+            nivel.eventos[i].acontecio = true;
+            setOnProgress(!onProgress)
+          }
+        }
+        if(progress >= nivel.semanas){
+          setLoadSimulation(false)
+          setRenderResults(true)
+        }
+        else{
+          setProgress(progress+1)
+        }
       }
-      else{
-        setProgress(progress+1)
-      }
-    }, 400);
+      
+    }, 5000/(nivel.semanas));
     return () => {
       clearInterval(timer);
     };
-  }, [setLoadSimulation, cantSemanas, setRenderResults, progress]);
+  }, [setLoadSimulation, setRenderResults, progress, nivel, onProgress]);
 
   return(
     <>
@@ -58,3 +70,4 @@ export default function Loader({setLoadSimulation, cantSemanas, setRenderResults
     </>
   )
 }
+
