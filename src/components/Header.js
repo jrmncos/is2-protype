@@ -59,6 +59,7 @@ export default function Header(props) {
   const { title } = props;
   const [anchorCase, setAnchorCase] = useState(false)
   const [anchorTutorial, setAnchorTutorial] = useState(false)
+  const [anchorPapper, setAnchorPapper] = useState(false)
 
   const handleMenuCase = (event) => {
     setAnchorCase(event.currentTarget)
@@ -68,12 +69,20 @@ export default function Header(props) {
     setAnchorTutorial(event.currentTarget)
   }
 
+  const handleMenuPapper = (event) => {
+    setAnchorPapper(event.currentTarget)
+  }
+
   const handleCloseMenuCase = () => {
     setAnchorCase(null)
   }
 
   const handleCloseMenuTutorial = () => {
     setAnchorTutorial(null)
+  }
+
+  const handleCloseMenuPapper = () => {
+    setAnchorPapper(null)
   }
 
   return (
@@ -234,24 +243,32 @@ export default function Header(props) {
           </Menu>
 
           <Button 
+            onClick={handleMenuPapper}
             color="inherit"
             noWrap
             variant="body2"
             style={{textTransform: 'none'}}
             className={classes.toolbarLink}
             >
-            Punto 7
+            Articulos Académicos
           </Button>
 
-          <Button 
-            color="inherit"
-            noWrap
-            variant="body2"
-            style={{textTransform: 'none'}}
-            className={classes.toolbarLink}
-            >
-                Punto 8
-          </Button>
+          <Menu
+            anchorEl={anchorPapper}
+            open={Boolean(anchorPapper)}
+            onClose = {handleCloseMenuPapper}
+          >
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/emotionalintelligence"}>
+                Emotional Intelligence
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/milennials"}>
+                Milennials Project Managers
+              </Link>
+            </MenuItem>    
+          </Menu>
           
         </Toolbar>
       </AppBar>
