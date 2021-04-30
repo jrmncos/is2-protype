@@ -1,6 +1,6 @@
 import React from "react";
 import Board from 'react-trello'
-
+/*
 const data = {
   lanes: [
     {
@@ -38,9 +38,28 @@ const data = {
     }
   ]
 }
-
+*/
+/*cards: [
+        {id: 'Card1', title: 'Write Blog', description: 'Can AI make memes', label: '30 mins'},
+        {id: 'Card2', title: 'Pay Rent', description: 'Transfer via NEFT', label: '5 mins', metadata: {sha: 'be312a1'}}
+      ],
+*/ 
+const data = {
+  lanes:[
+    {
+      id: 'lane1',
+      title: 'Por hacer',
+      label: '0/0',
+      disallowAddingCard: false,
+    },    
+  ]
+}
 export default function Kanban(){
+  const handleAddLane= (lane) =>{
+    console.log(lane)
+    window.alert("Lane added")
+  }
   return (
-    <Board data={data} editable/>
+    <Board data={data} editable canAddLanes onLaneAdd={handleAddLane}/>
   )
 }
