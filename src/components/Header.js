@@ -263,12 +263,37 @@ export default function Header(props) {
                 Emotional Intelligence
               </Link>
             </MenuItem>
+
             <MenuItem onClick = {handleCloseMenuTutorial}>
               <Link to={"/papper/milennials"}>
                 Milennials Project Managers
               </Link>
-            </MenuItem>    
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/businessintelligence"}>
+                Business Intelligence
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/collectivelearning"}>
+                Collective Learning in Project Teams
+              </Link>
+            </MenuItem>      
           </Menu>
+
+          <Link to={"/methodology"} >
+            <Button 
+              size="small"
+              color="inherit"
+              noWrap
+              variant="body2"
+              style={{textTransform: 'none'}}
+            >
+              Metodologías
+            </Button>
+          </Link>
           
         </Toolbar>
       </AppBar>

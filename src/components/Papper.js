@@ -8,6 +8,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import EmotionalIntelligence from "../pappers/EmotionalIntelligence";
 import MilennialsProjectManagers from "../pappers/MilennialsProjectManagers";
+import BusinessIntelligence from "../pappers/BusinessIntelligence";
+import CollectiveLearning from "../pappers/CollectiveLearning";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -22,7 +24,7 @@ const sidebar = {
   archives: [
     { title: 'Indie Games', url: '#' },
     { title: 'Scrum', url: '#' },
-    { title: 'Extreme Programmin', url: '#' },
+    { title: 'Extreme Programming', url: '#' },
     { title: 'Cisco', url: '#' },
     { title: 'Extended Mind', url: '#' },
     { title: 'Computación Decolonial', url: '#' },
@@ -47,6 +49,10 @@ export default function Papper({params}) {
         return <EmotionalIntelligence/>
       case "milennials":
         return <MilennialsProjectManagers/>
+      case "businessintelligence":
+        return <BusinessIntelligence/>
+      case "collectivelearning":
+        return <CollectiveLearning/>
       default:
         return <Home/>
     }
