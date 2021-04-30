@@ -10,6 +10,7 @@ import EmotionalIntelligence from "../pappers/EmotionalIntelligence";
 import MilennialsProjectManagers from "../pappers/MilennialsProjectManagers";
 import BusinessIntelligence from "../pappers/BusinessIntelligence";
 import CollectiveLearning from "../pappers/CollectiveLearning";
+import MultigenerationalProject from "../pappers/MultigenerationalProject"
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -53,6 +54,8 @@ export default function Papper({params}) {
         return <BusinessIntelligence/>
       case "collectivelearning":
         return <CollectiveLearning/>
+      case "multigenerational":
+        return <MultigenerationalProject/>
       default:
         return <Home/>
     }

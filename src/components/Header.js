@@ -280,7 +280,13 @@ export default function Header(props) {
               <Link to={"/papper/collectivelearning"}>
                 Collective Learning in Project Teams
               </Link>
-            </MenuItem>      
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/multigenerational"}>
+                Leading a Multigenerational Project Team
+              </Link>
+            </MenuItem>       
           </Menu>
 
           <Link to={"/methodology"} >
