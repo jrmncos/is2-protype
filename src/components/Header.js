@@ -230,8 +230,8 @@ export default function Header(props) {
             </MenuItem>
 
             <MenuItem onClick = {handleCloseMenuTutorial}>
-              <Link to={"/tutorial/atrapados"}>
-                Atrapados
+              <Link to={"/tutorial/certifications"}>
+                Certificaciones
               </Link>
             </MenuItem>
 
@@ -239,7 +239,8 @@ export default function Header(props) {
               <Link to={"/tutorial/certifications"}>
                 Certificaciones
               </Link>
-            </MenuItem>    
+            </MenuItem>     
+          
           </Menu>
 
           <Button 
@@ -286,7 +287,13 @@ export default function Header(props) {
               <Link to={"/papper/multigenerational"}>
                 Leading a Multigenerational Project Team
               </Link>
-            </MenuItem>       
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/sustainable"}>
+                Sustainable Wearables
+              </Link>
+            </MenuItem>         
           </Menu>
 
           <Link to={"/methodology"} >
