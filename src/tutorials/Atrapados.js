@@ -35,6 +35,11 @@ const preguntas = [
     titulo: "¿Cuando se produce la complacencia automatizada?",
     respuestas: ["Cuando sentimos mucha seguridad y confiamos en exceso en una computadora.", "Cuando se confía en exceso la información que vemos en una computadora."],
     correcta: 1
+  },
+  {
+    titulo: "¿Cuando se produce la complacencia automatizada?",
+    respuestas: ["Cuando sentimos mucha seguridad y confiamos en exceso en una computadora.", "Cuando sentimos mucha seguridad y confiamos en exceso en una computadora."],
+    correcta: 1
   }
 
 ]
@@ -55,22 +60,10 @@ export default function Atrapados() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    /*
-
-    if (value === 'best') {
-      setHelperText('You got it!');
-      setError(false);
-    } else if (value === 'worst') {
-      setHelperText('Sorry, wrong answer!');
-      setError(true);
-    } else {
-      setHelperText('Respuesta correcta 1)');
-      setError(true);
-    }
-    */
     console.log("Handle Submit")
     setMostrarSolucion(!mostrarSolucion)
   };
+
   return(
     <>
     <Grid
@@ -122,7 +115,6 @@ export default function Atrapados() {
               <>
                 <Pregunta 
                   pregunta={pregunta} 
-                  correctas={correctas} 
                   setCorrectas={setCorrectas}
                   mostrarSolucion={mostrarSolucion}
                 />
@@ -221,7 +213,9 @@ export default function Atrapados() {
         </Button>
       </form>
 
-
+      {
+        mostrarSolucion && <h1>La cantidad de respuestas correctas es {correctas} / {preguntas.length}</h1>
+      }
 
     </Grid>
     </>

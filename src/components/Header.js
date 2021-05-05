@@ -234,12 +234,6 @@ export default function Header(props) {
                 Certificaciones
               </Link>
             </MenuItem>
-
-            <MenuItem onClick = {handleCloseMenuTutorial}>
-              <Link to={"/tutorial/certifications"}>
-                Certificaciones
-              </Link>
-            </MenuItem>     
           
           </Menu>
 

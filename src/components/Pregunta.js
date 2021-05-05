@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Pregunta({pregunta, correctas, setCorrectas, mostrarSolucion}){
+export default function Pregunta({pregunta, setCorrectas, mostrarSolucion}){
   const classes = useStyles();
 
   const [helperText, setHelperText] = React.useState('');
@@ -20,24 +20,18 @@ export default function Pregunta({pregunta, correctas, setCorrectas, mostrarSolu
   const [error, setError] = React.useState(false);
 
   useEffect(()=>{
-    if(mostrarSolucion){
-      console.log("Effect")
-      if(value === pregunta.correcta){
-        setHelperText("Respuesta correcta")
-        setCorrectas(correctas + 1)
-      } 
-      else{
-        setHelperText("Respuesta es incorrecta")
-      }
+    if(value === pregunta.correcta){
+      setHelperText("Respuesta correcta")
+      setCorrectas(prevCorrectas => prevCorrectas + 1)
+    } 
+    else{
+      setHelperText("La opción correcta es la número " +  (pregunta.correcta+1 ) +")")
+      setError(true)
     }
-  }, [value,pregunta, mostrarSolucion, correctas, setCorrectas])
+  }, [value, pregunta, setCorrectas])
 
   const handleRadioChange = (event) => {
-    console.log("Radio Change")
-    console.log(event.target.value)
     setValue(parseInt(event.target.value, 10));
-    //setHelperText(' ');
-    //setError(false);
   };
   
   return(
@@ -51,12 +45,12 @@ export default function Pregunta({pregunta, correctas, setCorrectas, mostrarSolu
           {
             pregunta.respuestas.map((respuesta, idx) => {
               return(
-                <FormControlLabel value={idx} control={<Radio/>} label={respuesta}/>
+                <FormControlLabel value={idx} control={<Radio/>} label={(idx+1)+") "+respuesta}/>
               )
             })
           }
         </RadioGroup>
-        <FormHelperText>{helperText}</FormHelperText>
+        <FormHelperText>{mostrarSolucion && helperText}</FormHelperText>
       </FormControl>
     </Card>
     </>
