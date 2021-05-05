@@ -11,6 +11,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 import ReactAudioPlayer from 'react-audio-player';
 import atrapados from '../resources/atrapados.m4a';
+import Pregunta from "../components/Pregunta";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -22,12 +23,29 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+//[1,2,1,2,3,1,2] =>
+
+const preguntas = [
+  {
+    titulo: "¿Qué tipo de afección son la complacencia automatizada y el sesgo por la automatización?",
+    respuestas: ["Afección cognitiva", "Afección no cognitiva"],
+    correcta: 0
+  },
+  {
+    titulo: "¿Cuando se produce la complacencia automatizada?",
+    respuestas: ["Cuando sentimos mucha seguridad y confiamos en exceso en una computadora.", "Cuando se confía en exceso la información que vemos en una computadora."],
+    correcta: 1
+  }
+
+]
 
 export default function Atrapados() {
   const classes = useStyles();
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState('');
+  const [correctas, setCorrectas] = React.useState(0);
+  const [mostrarSolucion, setMostrarSolucion] = React.useState(false)
 
   const handleRadioChange = (event) => {
     setValue(event.target.value);
@@ -37,6 +55,7 @@ export default function Atrapados() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    /*
 
     if (value === 'best') {
       setHelperText('You got it!');
@@ -48,6 +67,9 @@ export default function Atrapados() {
       setHelperText('Respuesta correcta 1)');
       setError(true);
     }
+    */
+    console.log("Handle Submit")
+    setMostrarSolucion(!mostrarSolucion)
   };
   return(
     <>
@@ -93,109 +115,22 @@ export default function Atrapados() {
       <Typography variant="h4" component="h2" gutterBottom>
         Parte 1:
       </Typography>
-        <Card>
-          <FormControl component="fieldset" error={error} className={classes.formControl}>
-            <Typography variant="h6" gutterBottom >
-              ¿Qué tipo de afección son la complacencia automatizada y el sesgo por la automatización?
-            </Typography>
 
-            <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-              <FormControlLabel value="1" control={<Radio />} label=" 1) Afección cognitiva" />
-              <FormControlLabel value="2" control={<Radio />} label="2) Afección no cognitiva" />
-            </RadioGroup>
-            <FormHelperText>{helperText}</FormHelperText>
-          </FormControl>
-        </Card>
-        <Box m={2}/>
-
-        <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            ¿Cuando se produce la complacencia automatizada?
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Cuando sentimos mucha seguridad y confiamos en exceso en una computadora." />
-            <FormControlLabel value="2" control={<Radio />} label="2) Cuando se confía en exceso la información que vemos en una computadora." />
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-        </Card>
-        <Box m={2}/>
-
-        <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            ¿Cuando se produce el sesgo por la automatización?
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Cuando sentimos mucha seguridad y confiamos en exceso en una computadora. "/>
-            <FormControlLabel value="2" control={<Radio />} label="2) Cuando se confía en exceso la información que vemos en una computadora." />
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-        </Card>
-        <Box m={2}/>
-
-        <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            ¿Por qué se agudizan las afecciones cognitivas?
-          </Typography>
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Por nuevas tecnologías con más fiabilidad y más refinamiento que se lanzan al mercado." />
-            <FormControlLabel value="2" control={<Radio />} label="2) Por nuevas tecnologías con menos fiabilidad que se lanzan al mercado." />
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-        </Card>
-        <Box m={2}/>
-
-        <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            ¿Qué pasa cuando no recibimos feedbacks negativos cuando usamos los sistemas automatizados?
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Se produce un proceso cognitivo llamado despreocupación desaprendida." />
-            <FormControlLabel value="2" control={<Radio />} label="2)  Se produce un proceso cognitivo llamado despreocupación aprendida." />
-            
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-        </Card>
-        <Box m={2}/>
-
-        <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            Cuando se habla de  “Es diferente, el conocimiento genuino que requiere nuestro esfuerzo y se manifiesta en habilidades que obtener información inmediata de una computadora”. Se habla de: 
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Efecto generación." />
-            <FormControlLabel value="2" control={<Radio />} label="2) Efecto degeneración" />
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-        </Card>
-        <Box m={2}/>
-
-        <Card>
-          <FormControl component="fieldset" error={error} className={classes.formControl}>
-            <Typography variant="h6" gutterBottom >
-              La dependencia a la automatización tecnológica….
-            </Typography>
-
-            <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-              <FormControlLabel value="1" control={<Radio />} label=" 1) ayuda a mejorar las habilidades y el conocimiento." />
-              <FormControlLabel value="2" control={<Radio />} label="2) erosiona las habilidades y el conocimiento " />            
-            </RadioGroup>
-            <FormHelperText>{helperText}</FormHelperText>
-          </FormControl>
-        </Card>
+        {
+          preguntas.map((pregunta) =>{
+            return(
+              <>
+                <Pregunta 
+                  pregunta={pregunta} 
+                  correctas={correctas} 
+                  setCorrectas={setCorrectas}
+                  mostrarSolucion={mostrarSolucion}
+                />
+                <Box m={2}/>
+              </>
+            )
+          })
+        }
 
         <Box m={2}/>
         <Typography variant="h4" component="h2" gutterBottom>
@@ -279,13 +214,14 @@ export default function Atrapados() {
           <FormHelperText>{helperText}</FormHelperText>
         </FormControl>
       </Card>
-
-
-      </form>
+      
       <Box m={2}/>
-      <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Completar!
-      </Button>
+        <Button type="submit" variant="outlined" color="primary" className={classes.button}>
+          Completar!
+        </Button>
+      </form>
+
+
 
     </Grid>
     </>
