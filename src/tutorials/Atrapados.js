@@ -3,11 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { Box, Card, CardContent, Divider, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 import ReactAudioPlayer from 'react-audio-player';
 import atrapados from '../resources/atrapados.m4a';
@@ -23,8 +18,6 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-//[1,2,1,2,3,1,2] =>
-
 const preguntas = [
   {
     titulo: "¿Qué tipo de afección son la complacencia automatizada y el sesgo por la automatización?",
@@ -37,26 +30,61 @@ const preguntas = [
     correcta: 1
   },
   {
-    titulo: "¿Cuando se produce la complacencia automatizada?",
-    respuestas: ["Cuando sentimos mucha seguridad y confiamos en exceso en una computadora.", "Cuando sentimos mucha seguridad y confiamos en exceso en una computadora."],
+    titulo: "¿Cuando se produce el sesgo por la automatización?",
+    respuestas: ["Cuando sentimos mucha seguridad y confiamos en exceso en una computadora.", "Cuando se confía en exceso la información que vemos en una computadora."],
     correcta: 1
-  }
-
+  },
+  {
+    titulo: "¿Por qué se agudizan las afecciones cognitivas?",
+    respuestas: ["Por nuevas tecnologías con más fiabilidad y más refinamiento que se lanzan al mercado.", "Por nuevas tecnologías con menos fiabilidad que se lanzan al mercado."],
+    correcta: 0
+  },
+  {
+    titulo: "¿Qué pasa cuando no recibimos feedbacks negativos cuando usamos los sistemas automatizados?",
+    respuestas: ["Se produce un proceso cognitivo llamado despreocupación desaprendida.", "Se produce un proceso cognitivo llamado despreocupación aprendida."],
+    correcta: 0
+  },
+  {
+    titulo: "Cuando se habla de “Es diferente, el conocimiento genuino que requiere nuestro esfuerzo y se manifiesta en habilidades que obtener información inmediata de una computadora”. Se habla de.. ",
+    respuestas: ["Efecto generación.", "Efecto degeneración."],
+    correcta: 0
+  },
+  {
+    titulo: "La dependencia a la automatización tecnológica..",
+    respuestas: ["Ayuda a mejorar las habilidades y el conocimiento.", "Erosiona las habilidades y el conocimiento"],
+    correcta: 1
+  },
+  {
+    titulo: "Usar mapas generados por ordenadores permite:",
+    respuestas: ["Desarrollar un mapa cognitivo.", "Nos dan poca información espacial y pocas señales de navegación."],
+    correcta: 1
+  },
+  {
+    titulo: "Que tipo de viaje es un proceso continuo de crecimiento y desarrollo:",
+    respuestas: ["Viajar a pie.", "Viajar en transporte."],
+    correcta: 0
+  },
+  {
+    titulo: "Que tipo de células son más complejas:",
+    respuestas: ["Células del espacio.", "Células cuadrículas."],
+    correcta: 1
+  },
+  {
+    titulo: "Las celulas del espacio y cuadrículas forma un sistema:",
+    respuestas: ["De navegación y de formación de recuerdos.", "Sensorial."],
+    correcta: 0
+  },
+  {
+    titulo: "¿Qué facilita a que se crea que una máquina sea una herramienta suficiente y superior para realizar el trabajo de la mente?",
+    respuestas: ["La creencia de que el cerebro opera aisladamente del cuerpo.", "La creencia de que el intelecto opera en conjunto con el cuerpo."],
+    correcta: 0
+  },
 ]
 
 export default function Atrapados() {
   const classes = useStyles();
-  const [value, setValue] = React.useState('');
-  const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState('');
   const [correctas, setCorrectas] = React.useState(0);
   const [mostrarSolucion, setMostrarSolucion] = React.useState(false)
-
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    setHelperText(' ');
-    setError(false);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -105,11 +133,8 @@ export default function Atrapados() {
       </Grid>
 
       <form onSubmit={handleSubmit}>
-      <Typography variant="h4" component="h2" gutterBottom>
-        Parte 1:
-      </Typography>
-
-      {
+      <Box m={2}/>
+        {
           preguntas.map((pregunta) =>{
             return(
               <>
@@ -125,89 +150,6 @@ export default function Atrapados() {
         }
 
         <Box m={2}/>
-        <Typography variant="h4" component="h2" gutterBottom>
-        Parte 2:
-        </Typography>
-        <Box m={2}/>
-
-        <Card>
-          <FormControl component="fieldset" error={error} className={classes.formControl}>
-            <Typography variant="h6" gutterBottom >
-              Usar mapas generados por ordenadores permite:
-            </Typography>
-
-            <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-              <FormControlLabel value="1" control={<Radio />} label=" 1) Desarrollar un mapa cognitivo." />
-              <FormControlLabel value="2" control={<Radio />} label="2)Nos dan poca información espacial y pocas señales de navegación. " />            
-            </RadioGroup>
-            <FormHelperText>{helperText}</FormHelperText>
-          </FormControl>
-        </Card>
-
-        <Box m={2}/>
-
-      <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            Que tipo de viaje es un proceso continuo de crecimiento y desarrollo:
-          </Typography>
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Viajar a pie." />
-            <FormControlLabel value="2" control={<Radio />} label="2) Viajar en transporte. " />            
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-      </Card>
-
-      <Box m={2}/>
-
-      <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            Que tipo de células son más complejas:
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) Células del espacio." />
-            <FormControlLabel value="2" control={<Radio />} label="2) Células cuadrículas. " />            
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-      </Card>
-
-      <Box m={2}/>
-      
-      <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            Las celulas del espacio y cuadrículas forma un sistema:
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) De navegación  y de formación de recuerdos." />
-            <FormControlLabel value="2" control={<Radio />} label="2) Sensorial. " />            
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-      </Card>
-
-      <Box m={2}/>
-
-      <Card>
-        <FormControl component="fieldset" error={error} className={classes.formControl}>
-          <Typography variant="h6" gutterBottom >
-            ¿Qué facilita a que se crea que una máquina sea una herramienta suficiente y superior para realizar el trabajo de la mente?
-          </Typography>
-
-          <RadioGroup aria-label="quiz" name="quiz" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="1" control={<Radio />} label=" 1) La creencia de que el cerebro opera aisladamente del cuerpo." />
-            <FormControlLabel value="2" control={<Radio />} label="2)  La creencia de que el intelecto opera en conjunto con el cuerpo. " />            
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
-      </Card>
-      
-      <Box m={2}/>
         <Button type="submit" variant="outlined" color="primary" className={classes.button}>
           Completar!
         </Button>
