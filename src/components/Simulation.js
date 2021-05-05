@@ -15,14 +15,16 @@ const beginner = {
   descripcion: "Indie Game: Un grupo de dos desarrolladores lo contrata como Project Manager Junior para ayudarlos con su proyecto. Deben lograr sacar el juego 'Supear Meat Boy' dentro de 24 semanas y cuentan con un presupuesto de $5.000 dolares.",
   presupuesto: "$5000",
   semanas: 10,
-  tareas:55
+  tareas:55,
+  eventos: []
 }
 
 const intermediate = {
   descripcion: "Fundación Valle del Lili: El cuerpo médico de la FLV lo contrata como consultor para llevar adelante el desarrollo de una solución integral que resuelva los problemas que conlleva manejar los procesos del hospital en papel. Los médicos aún no tienen del todo claro cuales son los requerimientos funcionales, pero exigen que el proyecto esté terminado en 40 semanas y cuentan con un presupuesto de $30.000",
   presupuesto: "$30000",
   semanas: 40,
-  tareas: 197
+  tareas: 197,
+  eventos: []
 }
 
 const advanced = {
@@ -32,14 +34,14 @@ const advanced = {
   tareas: 400,
   eventos: [
     {
-      prob: 0.9,
+      id: 1,
+      proba: 0.9,
       descripcion: "Los directivos encontraron otras prioridades en el negocio. Por ende se reduce el presupuesto al 30%.",
-      acontecio: false
     },
     {
-      prob: 0.5,
+      id:2,
+      proba: 0.5,
       descripcion:"Debido a una mala estimación de un modulo core de la arquitectura, se añaden más tareas al proyecto.",
-      acontecio: false
     }
   ]
 }

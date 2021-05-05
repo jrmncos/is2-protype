@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ContentLoader from "react-content-loader";
-
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
-import LinearProgress from '@material-ui/core/LinearProgress';
-
+import { LinearProgress } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '50%',
@@ -15,37 +19,46 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+let eventoXAcontecio = new Map()
 
 export default function Loader({nivel, setLoadSimulation, setRenderResults}){
   const classes = useStyles();
-  const [progress, setProgress] = useState(1);
-  const [onProgress, setOnProgress] = useState(true);
+  const [week, setWeek] = useState(1);
+  const [open, setOpen] = React.useState(false);
+  const [paused, setPaused] = React.useState(false)
 
-
+  const handleClose = () => {
+    setOpen(false);
+    setPaused(false)
+  };
+  
   useEffect(() => {
     const timer = setInterval(() => {
-      if(onProgress){
-        for(var i=0; i<nivel.eventos.length;i++){
-          var num=Math.random();      
-          if(progress > 7 && !nivel.eventos[i].acontecio && num < nivel.eventos[i].proba){
-            nivel.eventos[i].acontecio = true;
-            setOnProgress(!onProgress)
+      //Chequeo si se disparo algun evento
+      if(!paused){
+        nivel.eventos.forEach((evento) => {
+          var num=Math.random();
+          //El evento solo ocurre una vez
+          if(week > 7 && eventoXAcontecio.get(evento.id) == null && num < evento.proba){
+            console.log(eventoXAcontecio.set(evento.id, true))
+            setOpen(true)
+            setPaused(true)
           }
-        }
-        if(progress >= nivel.semanas){
+        })
+        if(week >= nivel.semanas){
           setLoadSimulation(false)
           setRenderResults(true)
+          eventoXAcontecio.clear()
         }
         else{
-          setProgress(progress+1)
+          setWeek(week+1)
         }
-      }
-      
+      }  
     }, 5000/(nivel.semanas));
     return () => {
       clearInterval(timer);
     };
-  }, [setLoadSimulation, setRenderResults, progress, nivel, onProgress]);
+  }, [setLoadSimulation, setRenderResults, week, nivel, paused]);
 
   return(
     <>
@@ -63,9 +76,33 @@ export default function Loader({nivel, setLoadSimulation, setRenderResults}){
       </ContentLoader>
 
       <div className={classes.root}>
-        <LinearProgress />
-        <h1>Semana: {progress}</h1>
+        <LinearProgress/>
+        <h1>Semana: {week}</h1>
       </div>
+
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Let Google help apps determine location. This means sending anonymous location data to
+            Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Disagree
+          </Button>
+          <Button onClick={handleClose} color="primary" autoFocus>
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
       
     </>
   )
