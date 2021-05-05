@@ -109,7 +109,7 @@ export default function Atrapados() {
         Parte 1:
       </Typography>
 
-        {
+      {
           preguntas.map((pregunta) =>{
             return(
               <>
