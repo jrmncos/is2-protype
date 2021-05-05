@@ -37,7 +37,7 @@ export default function Pregunta({pregunta, setCorrectas, mostrarSolucion}){
   return(
     <>
     <Card>
-      <FormControl component="fieldset" error={error} className={classes.formControl}>
+      <FormControl disabled={mostrarSolucion} component="fieldset" error={error} className={classes.formControl}>
         <Typography variant="h6" gutterBottom >
           {pregunta.titulo}
         </Typography>
