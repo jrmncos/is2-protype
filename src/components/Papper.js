@@ -12,6 +12,7 @@ import BusinessIntelligence from "../pappers/BusinessIntelligence";
 import CollectiveLearning from "../pappers/CollectiveLearning";
 import MultigenerationalProject from "../pappers/MultigenerationalProject"
 import Sustainable from "../pappers/Sustainable";
+import NavArticles from "./NavArticles";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -58,8 +59,26 @@ export default function Papper({params}) {
       case "multigenerational":
         return <MultigenerationalProject/>
       case "sustainable":
-        return <Sustainable/>
-        
+        return <Sustainable/>        
+      default:
+        return <Home/>
+    }
+  }
+
+  const renderNavArticles = (params) => {
+    switch(params.id){
+      case "emotionalintelligence":
+        return <NavArticles next={articlesUrls.milennials} />
+      case "milennials":
+        return <NavArticles prev={articlesUrls.emotionalintelligence} next={articlesUrls.businessintelligence} />
+      case "businessintelligence":
+        return <NavArticles prev={articlesUrls.milennials} next={articlesUrls.collectivelearning} />
+      case "collectivelearning":
+        return <NavArticles prev={articlesUrls.businessintelligence} next={articlesUrls.multigenerational} />
+      case "multigenerational":
+        return <NavArticles prev={articlesUrls.collectivelearning} next={articlesUrls.sustainable}/>
+      case "sustainable":
+        return <NavArticles prev={articlesUrls.multigenerational}/>
       default:
         return <Home/>
     }
@@ -82,9 +101,22 @@ export default function Papper({params}) {
             social={sidebar.social}
           />
         </Grid>
+        <Grid item xs={8}>
+          {
+            renderNavArticles(caseStudy)
+          }
+        </Grid>
       </Grid>
     </main>
     </Container>
   )
+}
 
+const articlesUrls = {
+  emotionalintelligence: {title: "Emotional Intelligence", url: "/papper/emotionalintelligence"},
+  milennials: {title: "Milennial Project Managers", url: "/papper/milennials"},
+  businessintelligence: {title: "Business Intelligence", url: "/papper/businessintelligence"},
+  collectivelearning: {title: "Collective Learning in Project Teams", url:"/papper/collectivelearning"},
+  multigenerational: {title: "Leading a Multigenerational Project Team ", url:"/papper/multigenerational"},
+  sustainable: {title: "Sustainable Wearables", url: "/papper/sustainable"}
 }
