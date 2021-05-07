@@ -234,7 +234,18 @@ export default function Header(props) {
                 Certificaciones
               </Link>
             </MenuItem>
-          
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/future"}>
+                El Futuro de la Humanidad
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/decolonial"}>
+                Informática Decolonial
+              </Link>
+            </MenuItem>
           </Menu>
 
           <Button 
@@ -287,8 +298,16 @@ export default function Header(props) {
               <Link to={"/papper/sustainable"}>
                 Sustainable Wearables
               </Link>
-            </MenuItem>         
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/neurolinguistic"}>
+                Neuro Linguistics Programming
+              </Link>
+            </MenuItem>       
           </Menu>
+
+
 
           <Link to={"/methodology"} >
             <Button 

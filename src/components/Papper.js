@@ -13,6 +13,7 @@ import CollectiveLearning from "../pappers/CollectiveLearning";
 import MultigenerationalProject from "../pappers/MultigenerationalProject"
 import Sustainable from "../pappers/Sustainable";
 import NavArticles from "./NavArticles";
+import NeuroLinguistic from "../pappers/NeuroLinguistic";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -59,7 +60,9 @@ export default function Papper({params}) {
       case "multigenerational":
         return <MultigenerationalProject/>
       case "sustainable":
-        return <Sustainable/>        
+        return <Sustainable/>
+      case "neurolinguistic":
+        return <NeuroLinguistic/>          
       default:
         return <Home/>
     }
@@ -78,7 +81,9 @@ export default function Papper({params}) {
       case "multigenerational":
         return <NavArticles prev={articlesUrls.collectivelearning} next={articlesUrls.sustainable}/>
       case "sustainable":
-        return <NavArticles prev={articlesUrls.multigenerational}/>
+        return <NavArticles prev={articlesUrls.multigenerational} next={articlesUrls.neurolinguistic}/>
+      case "neurolinguistic":
+        return <NavArticles prev={articlesUrls.sustainable}/>
       default:
         return <Home/>
     }
@@ -118,5 +123,6 @@ const articlesUrls = {
   businessintelligence: {title: "Business Intelligence", url: "/papper/businessintelligence"},
   collectivelearning: {title: "Collective Learning in Project Teams", url:"/papper/collectivelearning"},
   multigenerational: {title: "Leading a Multigenerational Project Team ", url:"/papper/multigenerational"},
-  sustainable: {title: "Sustainable Wearables", url: "/papper/sustainable"}
+  sustainable: {title: "Sustainable Wearables", url: "/papper/sustainable"},
+  neurolinguistic: {title: "Neurolinguistic Programming", url: "papper/neurolinguistic"}
 }

@@ -10,6 +10,8 @@ import Capitalism from "../tutorials/Capitalism";
 import Genero from "../tutorials/Genero";
 import Atrapados from "../tutorials/Atrapados";
 import Certificaciones from "../tutorials/Certifications";
+import Future from "../tutorials/Future";
+import Decolonial from "../tutorials/Decolonial";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -53,6 +55,10 @@ export default function Tutorial({params}) {
         return <Atrapados/>
       case "certifications":
         return <Certificaciones/>
+      case "future":
+        return <Future/>
+      case "decolonial":
+        return <Decolonial/>
       default:
         return <Home/>
     }
