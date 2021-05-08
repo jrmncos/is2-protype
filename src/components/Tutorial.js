@@ -12,6 +12,8 @@ import Atrapados from "../tutorials/Atrapados";
 import Certificaciones from "../tutorials/Certifications";
 import Future from "../tutorials/Future";
 import Decolonial from "../tutorials/Decolonial";
+import ArquitecturaPolitica from "../tutorials/ArquitecturaPolitica";
+import ExtendedMind from "../tutorials/ExtendedMind";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -59,6 +61,10 @@ export default function Tutorial({params}) {
         return <Future/>
       case "decolonial":
         return <Decolonial/>
+      case "arquitecturapolitica":
+        return <ArquitecturaPolitica/>
+      case "extendedmind":
+        return <ExtendedMind/>
       default:
         return <Home/>
     }

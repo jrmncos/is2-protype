@@ -246,6 +246,18 @@ export default function Header(props) {
                 Informática Decolonial
               </Link>
             </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/arquitecturapolitica"}>
+                Arquitectura Politica de Internet
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/tutorial/extendedmind"}>
+                Mente Extendida - Replika
+              </Link>
+            </MenuItem>
           </Menu>
 
           <Button 
