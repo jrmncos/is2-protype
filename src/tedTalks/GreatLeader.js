@@ -2,11 +2,30 @@ import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import {  Box, Divider } from "@material-ui/core";
+import { YouTube } from "@material-ui/icons";
+
+const opts = {
+  height: '500',
+  width: '100%'
+};
 
 export default function GreatLeader() {
 
+  const onReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  }
+
   return (
     <>
+    <Typography variant="h3" component="h2" gutterBottom>
+			Simon Sinek: How great leaders inspire action
+    </Typography>    
+    <Divider/>
+    <Box m={1}/>
+    <YouTube videoId="Gdb9YSyelj0" opts={opts} onReady={onReady} />
+    <Box m={1}/>
+
     <Grid
       container
       direction="column"
@@ -14,12 +33,6 @@ export default function GreatLeader() {
       alignItems="stretch"
       spacing={2}
     >
-    <Typography variant="h3" component="h2" gutterBottom>
-			Simon Sinek: How great leaders inspire action
-    </Typography>    
-    <Divider/>
-    <Box m={1}/>
-
     <Typography variant="subtitle1" component="h2" gutterBottom>
 			En la charla TED “How great leaders inspire action”, de Simon Sinek, él mismo expone 3 casos de grandes líderes: En primer lugar, el caso de Apple, ¿cómo logran ser una una empresa tan innovadora?. En segundo lugar, el caso de Martin Luther King, ¿por qué él dirigió el movimiento de derechos civiles? siendo que no era el único gran orador del momento. Por último, el caso de los hermanos Wright, ¿por qué fueron capaces de idear los vuelos tripulados autopropulsados? siendo que habían personas mejor calificadas y mejor financiadas.
 			
