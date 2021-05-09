@@ -8,6 +8,13 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import NavArticles from "./NavArticles";
 import GreatLeader from "../tedTalks/GreatLeader";
+import SteveJobs from "../tedTalks/SteveJobs";
+import School from "../tedTalks/School";
+import FacebookDemocracy from "../tedTalks/FacebookDemocracy";
+import Conversation from "../tedTalks/Conversation";
+import EmbracingChange from "../tedTalks/EmbracingChange";
+import Procrastinator from "../tedTalks/Procrastinator";
+import Water from "../tedTalks/Water";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -43,8 +50,22 @@ export default function Talks({params}) {
     console.log(params)
     console.log(params.id)
     switch(params.id){
+      case "conversation":
+        return <Conversation/>   
+      case "embracingchange":
+        return <EmbracingChange/>
+      case "facebookdemocracy":
+        return <FacebookDemocracy/>      
       case "greatleader":
         return <GreatLeader/>   
+      case "procrastinator":
+        return <Procrastinator/>   
+      case "school":
+        return <School/>   
+      case "stevejobs":
+        return <SteveJobs/>   
+      case "water":
+        return <Water/>   
       default:
         return <Home/>
     }

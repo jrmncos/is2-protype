@@ -1,15 +1,17 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import {  Box, Divider } from "@material-ui/core";
-import { YouTube } from "@material-ui/icons";
+import YouTube from 'react-youtube';
+import { Link } from "wouter";
+import {  Box, Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const opts = {
   height: '500',
   width: '100%'
 };
 
-export default function Procrastinator() {
+export default function Conversation() {
 
   const onReady = (event) => {
     // access to player in all event handlers via event.target
@@ -18,13 +20,20 @@ export default function Procrastinator() {
 
   return (
     <>
+    <Grid
+      container
+      direction="column"
+      justify="flex-start"
+      alignItems="stretch"
+      spacing={2}
+    >
     <Typography variant="h3" component="h2" gutterBottom>
 			Tim Urban: Inside the mind of a master procrastinator
 		</Typography>
 
     <Divider/>
     <Box m={1}/>
-    <YouTube videoId="9vJRopau0g0" opts={opts} onReady={onReady} />
+    <YouTube videoId="arj7oStGLkU" opts={opts} onReady={onReady} />
     <Box m={1}/>
 
     <Grid
@@ -70,6 +79,7 @@ export default function Procrastinator() {
     <Typography variant="subtitle1" gutterBottom style={{fontStyle: "italic"}} align="justify">
 			Autor: Tim Urban Charla: https://www.ted.com/talks/tim_urban_inside_the_mind_of_a_master_procrastinator/transcript#t-830538
     </Typography>
+    </Grid>
     </Grid>
     </>
   )

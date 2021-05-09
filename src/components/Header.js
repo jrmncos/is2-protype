@@ -395,8 +395,43 @@ export default function Header(props) {
             onClose = {handleCloseMenuTeds}
           >
             <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/conversation"}>
+                10 ways to have a better conversation
+              </Link>
+            </MenuItem> 
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/embracingchange"}>
+                Embrasing Change
+              </Link>
+            </MenuItem> 
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/facebookdemocracy"}>
+              Facebook’s role in Brexit and the threat to democracy
+              </Link>
+            </MenuItem> 
+            <MenuItem onClick = {handleCloseMenuTeds}>
               <Link to={"/talks/greatleader"}>
                 How to great leader inspire
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/procrastinator"}>
+                Inside the mind of a master procrastinator
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/stevejobs"}>
+                Steve Jobs Discurso en Stanford
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/school"}>
+                ¿Do schools kill creativity?
+              </Link>
+            </MenuItem>
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/water"}>
+                This is water
               </Link>
             </MenuItem>
           </Menu>

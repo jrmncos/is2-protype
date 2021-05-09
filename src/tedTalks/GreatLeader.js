@@ -1,15 +1,15 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import {  Box, Divider } from "@material-ui/core";
-import { YouTube } from "@material-ui/icons";
+import YouTube from 'react-youtube';
+import {  Box, Divider} from "@material-ui/core";
 
 const opts = {
   height: '500',
   width: '100%'
 };
 
-export default function GreatLeader() {
+export default function Conversation() {
 
   const onReady = (event) => {
     // access to player in all event handlers via event.target
@@ -18,12 +18,19 @@ export default function GreatLeader() {
 
   return (
     <>
-    <Typography variant="h3" component="h2" gutterBottom>
+    <Grid
+      container
+      direction="column"
+      justify="flex-start"
+      alignItems="stretch"
+      spacing={2}
+    >
+     <Typography variant="h3" component="h2" gutterBottom>
 			Simon Sinek: How great leaders inspire action
     </Typography>    
     <Divider/>
     <Box m={1}/>
-    <YouTube videoId="Gdb9YSyelj0" opts={opts} onReady={onReady} />
+    <YouTube videoId="qp0HIF3SfI4" opts={opts} onReady={onReady} />
     <Box m={1}/>
 
     <Grid
@@ -60,6 +67,8 @@ export default function GreatLeader() {
     <Typography variant="subtitle1" gutterBottom style={{fontStyle: "italic"}} align="justify">
 			Simon Sinek (2009). How great leaders inspire action.
     </Typography>
+    </Grid>
+
     </Grid>
     </>
   )

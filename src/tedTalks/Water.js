@@ -1,8 +1,10 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import {  Box, Divider } from "@material-ui/core";
-import { YouTube } from "@material-ui/icons";
+import YouTube from 'react-youtube';
+import { Link } from "wouter";
+import {  Box, Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const opts = {
   height: '500',
@@ -18,13 +20,20 @@ export default function Water() {
 
   return (
     <>
+    <Grid
+      container
+      direction="column"
+      justify="flex-start"
+      alignItems="stretch"
+      spacing={2}
+    >
     <Typography variant="h3" component="h2" gutterBottom>
       David Foster Wallace. This is water. Discurso de Graduación. Kenyon College.
 		</Typography>
 
     <Divider/>
     <Box m={1}/>
-    <YouTube videoId="9vJRopau0g0" opts={opts} onReady={onReady} />
+    <YouTube videoId="TwzEZPLisBM" opts={opts} onReady={onReady} />
     <Box m={1}/>
 
     <Grid
@@ -59,6 +68,7 @@ export default function Water() {
     <Typography variant="subtitle1" gutterBottom style={{fontStyle: "italic"}} align="justify">
       
     </Typography>
+    </Grid>
     </Grid>
     </>
   )
