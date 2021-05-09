@@ -325,6 +325,18 @@ export default function Header(props) {
               <Link to={"/papper/neurolinguistic"}>
                 Neuro Linguistics Programming
               </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/businessagile"}>
+                Business Agility
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuTutorial}>
+              <Link to={"/papper/iot"}>
+                IoT and AI
+              </Link>
             </MenuItem>       
           </Menu>
 

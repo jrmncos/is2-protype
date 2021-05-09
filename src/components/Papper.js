@@ -14,6 +14,8 @@ import MultigenerationalProject from "../pappers/MultigenerationalProject"
 import Sustainable from "../pappers/Sustainable";
 import NavArticles from "./NavArticles";
 import NeuroLinguistic from "../pappers/NeuroLinguistic";
+import BusinessAgile from "../pappers/BusinessAgile"
+import IoT from "../pappers/IoT";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -62,7 +64,11 @@ export default function Papper({params}) {
       case "sustainable":
         return <Sustainable/>
       case "neurolinguistic":
-        return <NeuroLinguistic/>          
+        return <NeuroLinguistic/>
+      case "businessagile":
+        return <BusinessAgile/>
+      case "iot":
+        return <IoT/>        
       default:
         return <Home/>
     }
@@ -83,7 +89,11 @@ export default function Papper({params}) {
       case "sustainable":
         return <NavArticles prev={articlesUrls.multigenerational} next={articlesUrls.neurolinguistic}/>
       case "neurolinguistic":
-        return <NavArticles prev={articlesUrls.sustainable}/>
+        return <NavArticles prev={articlesUrls.sustainable} next={articlesUrls.iot}/>
+      case "businessagile":
+        return <NavArticles prev={articlesUrls.neurolinguistic} next={articlesUrls.iot}/>
+      case "iot":
+        return <NavArticles prev={articlesUrls.businessagile}/>
       default:
         return <Home/>
     }
@@ -124,5 +134,7 @@ const articlesUrls = {
   collectivelearning: {title: "Collective Learning in Project Teams", url:"/papper/collectivelearning"},
   multigenerational: {title: "Leading a Multigenerational Project Team ", url:"/papper/multigenerational"},
   sustainable: {title: "Sustainable Wearables", url: "/papper/sustainable"},
-  neurolinguistic: {title: "Neurolinguistic Programming", url: "papper/neurolinguistic"}
+  neurolinguistic: {title: "Neurolinguistic Programming", url: "/papper/neurolinguistic"},
+  businessagile: {title: "Trends in Agile: Business Agility", url:"/papper/businessagile"},
+  iot: {title: "Internet of Things and Artificial Intelligence", url: "/papper/iot"}
 }
