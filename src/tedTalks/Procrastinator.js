@@ -2,9 +2,7 @@ import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import YouTube from 'react-youtube';
-import { Link } from "wouter";
-import {  Box, Divider, List, ListItem, ListItemText } from "@material-ui/core";
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import {  Box, Divider } from "@material-ui/core";
 
 const opts = {
   height: '500',

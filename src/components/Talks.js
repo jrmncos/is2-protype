@@ -70,6 +70,30 @@ export default function Talks({params}) {
         return <Home/>
     }
   }
+
+  const renderNavArticles = (params) => {
+    switch(params.id){
+      case "conversation":
+        return <NavArticles next={articlesUrls.embracingchange} />
+      case "embracingchange":
+        return <NavArticles prev={articlesUrls.conversation} next={articlesUrls.facebookdemocracy} />
+      case "facebookdemocracy":
+        return <NavArticles prev={articlesUrls.embracingchange} next={articlesUrls.greatleader} />
+      case "greatleader":
+        return <NavArticles prev={articlesUrls.facebookdemocracy} next={articlesUrls.procrastinator} />
+      case "procrastinator":
+        return <NavArticles prev={articlesUrls.greatleader} next={articlesUrls.school}/>
+      case "school":
+        return <NavArticles prev={articlesUrls.procrastinator} next={articlesUrls.stevejobs}/>
+      case "stevejobs":
+        return <NavArticles prev={articlesUrls.school} next={articlesUrls.water}/>
+      case "water":
+        return <NavArticles prev={articlesUrls.stevejobs}/>
+      default:
+        return <Home/>
+    }
+  }
+
   /*
   const renderNavArticles = (params) => {
     switch(params.id){
@@ -97,12 +121,11 @@ export default function Talks({params}) {
             social={sidebar.social}
           />
         </Grid>
-        {/*<Grid item xs={8}>
+        <Grid item xs={8}>
           {
             renderNavArticles(caseStudy)
           }
         </Grid>
-        */}
       </Grid>
     </main>
     </Container>
@@ -110,5 +133,13 @@ export default function Talks({params}) {
 }
 
 const articlesUrls = {
-  emotionalintelligence: {title: "Emotional Intelligence", url: "/papper/emotionalintelligence"}
+  conversation: {title: "10 ways to have a better conversation", url: "/talks/conversation"},
+  embracingchange: {title: "Embracing Change", url: "/talks/embracingchange"},
+  facebookdemocracy: {title: "Facebook’s role in Brexit and the threat to democracy", url: "/talks/facebookdemocracy"},
+  greatleader: {title: "How great leaders inspire action", url: "/talks/greatleader"},
+  procrastinator: {title: "Inside the mind of a master procrastinator", url: "/talks/procrastinator"},
+  school: {title: "¿Do schools kill creativity?", url: "/talks/school"},
+  stevejobs: {title: "Steve Jobs Discurso en Stanford", url: "/talks/stevejobs"},
+  water: {title: "This is water Discurso de Graduación.", url: "/talks/water"},
 }
+
