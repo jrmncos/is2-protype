@@ -61,6 +61,7 @@ export default function Header(props) {
   const [anchorTutorial, setAnchorTutorial] = useState(false)
   const [anchorPapper, setAnchorPapper] = useState(false)
   const [anchorPropuesta, setAnchorPropuesta] = useState(false)
+  const [anchorTeds, setAnchorTeds] = useState(false)
   
   const handleMenuCase = (event) => {
     setAnchorCase(event.currentTarget)
@@ -78,6 +79,10 @@ export default function Header(props) {
     setAnchorPropuesta(event.currentTarget)
   }
 
+  const handleMenuTeds = (event) => {
+    setAnchorTeds(event.currentTarget)
+  }
+
   const handleCloseMenuCase = () => {
     setAnchorCase(null)
   }
@@ -92,6 +97,10 @@ export default function Header(props) {
 
   const handleCloseMenuPropuesta = () => {
     setAnchorPropuesta(null)
+  }
+
+  const handleCloseMenuTeds = () => {
+    setAnchorTeds(null)
   }
 
   return (
@@ -365,6 +374,29 @@ export default function Header(props) {
             <MenuItem onClick = {handleCloseMenuPropuesta}>
               <Link to={"/propuesta/scrum"}>
                 Scrum
+              </Link>
+            </MenuItem>
+          </Menu>
+
+          <Button 
+            onClick={handleMenuTeds}
+            color="inherit"
+            noWrap
+            variant="body2"
+            style={{textTransform: 'none'}}
+            className={classes.toolbarLink}
+            >
+            Charlas Teds
+          </Button>
+
+          <Menu
+            anchorEl={anchorTeds}
+            open={Boolean(anchorTeds)}
+            onClose = {handleCloseMenuTeds}
+          >
+            <MenuItem onClick = {handleCloseMenuTeds}>
+              <Link to={"/talks/greatleader"}>
+                How to great leader inspire
               </Link>
             </MenuItem>
           </Menu>

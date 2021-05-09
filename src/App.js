@@ -3,6 +3,7 @@ import CaseStudy from './components/CaseStudy'
 import Simulation from './components/Simulation'
 import Tutorial from './components/Tutorial'
 import Papper from './components/Papper'
+import Talks from './components/Talks'
 import DevelopmentPlan from './components/DevelopmentPlan'
 import Methodology from './components/Methodology'
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -28,6 +29,7 @@ function App() {
         <Route component={Papper} path="/papper/:id" />
         <Route component={Methodology} path="/methodology" />
         <Route component={PropuestaLudica} path='/propuesta/:id'/>
+        <Route component={Talks} path='/talks/:id'/>
       </Switch>
       <Footer title="IS2 - Primer Semestre 2021" description="" />
     </>
