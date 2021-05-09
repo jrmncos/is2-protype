@@ -10,6 +10,7 @@ import Header from './components/Header'
 import Footer from './components/Footer';
 import { Route, Switch } from "wouter";
 import Container from '@material-ui/core/Container';
+import PropuestaLudica from './components/PropuestaLudica'
 function App() {
 
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route component={DevelopmentPlan} path="/developmentplan" />
         <Route component={Papper} path="/papper/:id" />
         <Route component={Methodology} path="/methodology" />
+        <Route component={PropuestaLudica} path='/propuesta/:id'/>
       </Switch>
       <Footer title="IS2 - Primer Semestre 2021" description="" />
     </>

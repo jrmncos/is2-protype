@@ -81,7 +81,7 @@ export default function DevelopmentPlan() {
               </AccordionSummary>
               <AccordionDetails>
                 <Grid container>
-                  <SinglePagePDFViewer pdf={planCisco} />
+                  <SinglePagePDFViewer pdf={planCisco} height={700} scale={1.5} />
                 </Grid>
               </AccordionDetails>
             </Accordion>

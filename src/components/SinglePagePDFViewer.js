@@ -1,12 +1,15 @@
 //Copy from https://levelup.gitconnected.com/displaying-pdf-in-react-app-6e9d1fffa1a9
 
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 
-export default function SinglePagePDFViewer(props) {
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+
+export default function SinglePagePDFViewer({pdf, height, scale}) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
-
+  
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
     setPageNumber(1);
@@ -24,16 +27,15 @@ export default function SinglePagePDFViewer(props) {
     changePage(1);
   }
 
-  const { pdf } = props;
-
   return (
     <>
       <Document
         file={pdf}
         options={{ workerSrc: "/pdf.worker.js" }}
         onLoadSuccess={onDocumentLoadSuccess}
+        onLoadError={console.error}
       >
-        <Page pageNumber={pageNumber} height={'700'} scale={1.5}/>
+        <Page pageNumber={pageNumber} height={height} scale={scale}/>
       </Document>
       <div>
         <p>

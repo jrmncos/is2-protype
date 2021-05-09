@@ -60,7 +60,8 @@ export default function Header(props) {
   const [anchorCase, setAnchorCase] = useState(false)
   const [anchorTutorial, setAnchorTutorial] = useState(false)
   const [anchorPapper, setAnchorPapper] = useState(false)
-
+  const [anchorPropuesta, setAnchorPropuesta] = useState(false)
+  
   const handleMenuCase = (event) => {
     setAnchorCase(event.currentTarget)
   }
@@ -73,6 +74,10 @@ export default function Header(props) {
     setAnchorPapper(event.currentTarget)
   }
 
+  const handleMenuPropuesta = (event) => {
+    setAnchorPropuesta(event.currentTarget)
+  }
+
   const handleCloseMenuCase = () => {
     setAnchorCase(null)
   }
@@ -83,6 +88,10 @@ export default function Header(props) {
 
   const handleCloseMenuPapper = () => {
     setAnchorPapper(null)
+  }
+
+  const handleCloseMenuPropuesta = () => {
+    setAnchorPropuesta(null)
   }
 
   return (
@@ -319,19 +328,34 @@ export default function Header(props) {
             </MenuItem>       
           </Menu>
 
-
-
-          <Link to={"/methodology"} >
-            <Button 
-              size="small"
-              color="inherit"
-              noWrap
-              variant="body2"
-              style={{textTransform: 'none'}}
+          <Button 
+            onClick={handleMenuPropuesta}
+            color="inherit"
+            noWrap
+            variant="body2"
+            style={{textTransform: 'none'}}
+            className={classes.toolbarLink}
             >
-              Metodologías
-            </Button>
-          </Link>
+            Propuestas Ludicas
+          </Button>
+
+          <Menu
+            anchorEl={anchorPropuesta}
+            open={Boolean(anchorPropuesta)}
+            onClose = {handleCloseMenuPropuesta}
+          >
+            <MenuItem onClick = {handleCloseMenuPropuesta}>
+              <Link to={"/propuesta/modelos"}>
+                Modelos de ciclo de vida
+              </Link>
+            </MenuItem>
+
+            <MenuItem onClick = {handleCloseMenuPropuesta}>
+              <Link to={"/propuesta/scrum"}>
+                Scrum
+              </Link>
+            </MenuItem>
+          </Menu>
           
         </Toolbar>
       </AppBar>
