@@ -18,12 +18,12 @@ export default function TalksRelation() {
       spacing={2}
     >
     <Typography variant="h3" component="h2" gutterBottom>
-      Relaciones entre las charlas teds
+      Relaciones entre las charlas TED
     </Typography>    
     <Divider/>
 
     <Typography variant="h5" component="h2" gutterBottom style={{fontStyle: "italic", color:"#808080"}}>
-      El siguiente diagrama muestra las relaciones que supimos identificar entre las charlas Teds.
+      El siguiente diagrama muestra las relaciones que supimos identificar entre las charlas TED.
     </Typography>
     <ImageZoom
       image={{
@@ -57,7 +57,7 @@ export default function TalksRelation() {
 
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
-      2. Relación entre Inside the mind of master procrastinator (Tim Urban), Jason Clarke y Steve Jobs
+      2. Relación entre Inside the mind of master procrastinator (Tim Urban), Embracing Change (Jason Clarke) y Discurso de Graduación (Steve Jobs)
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >
@@ -66,7 +66,7 @@ export default function TalksRelation() {
 
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
-      3. Relación entre Ken Robinson, Carole Cadwalladr y David Foster Wallace.
+      3. Relación entre Do schools kill creativity? (Ken Robinson), Facebook’s role in Brexit and the threat to democracy (Carole Cadwalladr) y This is water (David Foster Wallace)
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >

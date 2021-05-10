@@ -396,12 +396,12 @@ export default function Header(props) {
           >
             <MenuItem onClick = {handleCloseMenuTeds}>
               <Link to={"/talks/relation"}>
-                Relaciones entre las charlas Teds
+                Relaciones entre las charlas TED
               </Link>
             </MenuItem> 
             <MenuItem onClick = {handleCloseMenuTeds}>
               <Link to={"/talks/learnedlesson"}>
-                Lecciones aprendidas de las charlas
+                Lecciones aprendidas de charlas TED
               </Link>
             </MenuItem> 
             <MenuItem onClick = {handleCloseMenuTeds}>

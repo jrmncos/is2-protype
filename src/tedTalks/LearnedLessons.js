@@ -16,7 +16,7 @@ export default function LearnedLessons() {
       spacing={2}
     >
     <Typography variant="h3" component="h2" gutterBottom>
-      Lecciones aprendidas de las charlas teds
+      Pasajes importantes y lecciones aprendidas de charlas TED
     </Typography>    
     <Divider/>
     
@@ -31,7 +31,7 @@ export default function LearnedLessons() {
 
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
-      El papel de Facebook en el Brexit y la amenaza a la democracia
+      El papel de Facebook en el Brexit y la creencia
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >
@@ -89,7 +89,7 @@ export default function LearnedLessons() {
 
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
-      FB2
+      El papel de Facebook en el Brexit y la apropiación incluyente
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >
