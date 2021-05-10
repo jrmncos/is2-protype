@@ -89,6 +89,23 @@ export default function LearnedLessons() {
 
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
+      FB2
+    </Typography>
+
+    <Typography variant="subtitle1" gutterBottom align="justify"  >
+      En el texto Introducción a la arquitectura política de internet de Zukerfeld se puede comparar con la charla Ted de Carole Cadwalladr, el siguiente párrafo “En lugar de fundar la ganancia capitalista en cercamientos al acceso, la apropiación incluyente se concentra en aprovechar la producción impaga de conocimientos (...) de los internautas (…) . Así, en términos económicos algo toscos, podría proponerse que donde la propiedad intelectual busca aumentar el precio del producto, la apropiación incluyente tiene como objetivo bajar al mínimo los gastos de los insumos.
+    </Typography>
+
+    <Typography variant="subtitle1" gutterBottom align="justify"  >
+      Esto se complementa con estrategias de negocios basadas en la publicidad, la venta de bases de datos, la gestión de las comunidades, y, claro, la venta de los productos a precios cercanos al costo marginal.” .
+    </Typography>
+
+    <Typography variant="subtitle1" gutterBottom align="justify"  >
+      La periodista habla del uso de manera ilegal de datos de usuarios de Facebook que permitió que una consultora llamada Cambridge Analytica pudiera analizar los perfiles y seleccionar a los más persuadibles en base a sus temores y así poder mandarles información que favorecía a sus contratadores. Este negocio se dio por detrás de la red social simultáneamente cuando se producía el referéndum del Brexit, en donde la campaña Vote Leave gastó millones de euros con el único objetivo de desinformar a la gente.
+    </Typography>
+
+    <Box m={1}/>
+    <Typography variant="h5" component="h2" gutterBottom >
       Los project managers y cómo los grandes líderes nos inspiran 
     </Typography>
 

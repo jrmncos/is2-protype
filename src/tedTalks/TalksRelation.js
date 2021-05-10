@@ -40,7 +40,7 @@ export default function TalksRelation() {
     
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
-      1. Relación entre Jason Clarke, Celeste Headlee y Simon Sinek
+      1. Relación entre Embracing Change (Jason Clarke), 10 ways to have a better conversation (Celeste Headlee) y How great leaders inspire action (Simon Sinek)
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >
@@ -57,7 +57,7 @@ export default function TalksRelation() {
 
     <Box m={1}/>
     <Typography variant="h5" component="h2" gutterBottom >
-      2. Relación entre Tim Urban, Jason Clarke y Steve Jobs
+      2. Relación entre Inside the mind of master procrastinator (Tim Urban), Jason Clarke y Steve Jobs
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >
