@@ -386,7 +386,7 @@ export default function Header(props) {
             style={{textTransform: 'none'}}
             className={classes.toolbarLink}
             >
-            Charlas Teds
+            Charlas TED
           </Button>
 
           <Menu
