@@ -45,7 +45,7 @@ export default function PropuestaLudica({params}){
 						<Box m={1.5}/>
 						<SinglePagePDFViewer pdf={scrum} height={'850'} scale={2}/>
 
-						<a href={metricascrum} download="metricascrum.xlsx"> Descarga las metricas aca.. </a>
+						<a href={metricascrum} download="metricascrum.xlsx"> Descarga el excel para jugar con los datos y hacer tus propias pruebas </a>
 					</>
 				)
       default:

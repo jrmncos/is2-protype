@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 const mainFeaturedPost = {
   title: 'IS2 Prototipo',
   description:
-    "En este Blog podrás aprender sobre distintas metodologías de Software, estrategias....",
+    "Bienvenido al Prototipo de Ingenieria de Software II! En este sitio podrás aprender sobre distintas metodologías de Software, aprender sobre Soft Skills, entre otras actividades ludicas...",
   image: 'https://images.unsplash.com/photo-1562619425-c307bb83bc42?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',
   imgText: 'main image description',
   linkText: 'Seguir leyendo…',
@@ -65,7 +65,7 @@ const sidebar = {
   archives: [
     { title: 'Indie Games', url: '#' },
     { title: 'Scrum', url: '#' },
-    { title: 'Extreme Programmin', url: '#' },
+    { title: 'Extreme Programming', url: '#' },
     { title: 'Cisco', url: '#' },
     { title: 'Extended Mind', url: '#' },
     { title: 'Computación Decolonial', url: '#' },

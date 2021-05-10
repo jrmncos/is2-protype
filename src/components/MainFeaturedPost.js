@@ -38,8 +38,20 @@ const useStyles = makeStyles((theme) => ({
 export default function MainFeaturedPost(props) {
   const classes = useStyles();
   const { post } = props;
+  
+  const handleClick = () => {
+    if(props.title ==="Implementación de SAP en FLV"){
+      
+    }
+    else if(props.title === "El Dilema de las Redes sociales"){
+
+    }
+    else{
+
+    }
+  }
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }} onClick={handleClick}>
       {/* Increase the priority of the hero background image */}
       {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
       <div className={classes.overlay} />
