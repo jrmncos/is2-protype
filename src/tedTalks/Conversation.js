@@ -165,15 +165,6 @@ export default function Conversation() {
       </ListItem>
 
     </List>
-      
-      
-     
-      
-      
-      
-      
-     
-     
     </Typography>
 
     <Typography variant="subtitle1" gutterBottom align="justify"  >

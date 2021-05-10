@@ -14,7 +14,9 @@ import FacebookDemocracy from "../tedTalks/FacebookDemocracy";
 import Conversation from "../tedTalks/Conversation";
 import EmbracingChange from "../tedTalks/EmbracingChange";
 import Procrastinator from "../tedTalks/Procrastinator";
+import TalksRelation from "../tedTalks/TalksRelation";
 import Water from "../tedTalks/Water";
+import LearnedLessons from "../tedTalks/LearnedLessons";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -50,6 +52,10 @@ export default function Talks({params}) {
     console.log(params)
     console.log(params.id)
     switch(params.id){
+      case "relation":
+        return <TalksRelation/>   
+      case "learnedlesson":
+          return <LearnedLessons/>   
       case "conversation":
         return <Conversation/>   
       case "embracingchange":
@@ -90,7 +96,7 @@ export default function Talks({params}) {
       case "water":
         return <NavArticles prev={articlesUrls.stevejobs}/>
       default:
-        return <Home/>
+        return <></>
     }
   }
 
